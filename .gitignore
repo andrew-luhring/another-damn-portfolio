@@ -18,8 +18,8 @@ tests/results/*
 **/*.log
 **/*.psd
 **/*.ai
-public/lib/**
-!public/lib/*.js
+assets/lib/**
+!assets/lib/*.js
 *_BAK*
 assets/css/
 assets/css/*
