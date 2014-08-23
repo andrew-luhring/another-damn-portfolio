@@ -1,13 +1,12 @@
 {
 		"exclude": [
 		".git/**"
-	,		"node_modules/**"
-	,		".idea/**"
-	,		".sass-cache/*"
+	,	"node_modules/**"
+	,	".idea/**"
 	]
 	,	"always-semicolon": true
 	,	"block-indent": "    "
-	,   "colon-space": [
+	,	"colon-space": [
 			"",
 			" "
 		]
