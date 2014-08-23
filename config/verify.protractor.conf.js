@@ -1,0 +1,25 @@
+/*jshint expr: true*/
+/*global browser: true*/
+var TEST_DIR =  '../tests/';
+exports.config = {
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  specs : [
+    '../tests/e2e/_protractor.js',
+  ],
+  capabilities: {
+    'browserName': 'phantomjs',
+    'phantomjs.binary.path' : './node_modules/.bin/phantomjs'
+  },
+  onPrepare: function() {
+    "use strict";
+    browser.driver.get('');
+    browser.driver.wait(function() {
+      return browser.driver.getCurrentUrl().then(function(url) {
+        return /\#\//.test(url);
+      });
+    });
+  },
+  jasmineNodeOpts: {
+    showColors: true
+  }
+};
