@@ -1074,49 +1074,55 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
-    .site-head 
-    .blog-title 
-    .blog-description 
-    .post 
-    .post-template .post 
-    .post-template .post-header; 
-    blockquote {
-  margin-left: 0;
-}{
-          box-sizing: border-box;
-  height: auto;
-  min-height: 240px;
-  padding: 15% 0;
 
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-}{
-  font-size: 4rem;
-  letter-spacing: -1px;
-}{
-  font-size: 1.7rem;
-  line-height: 1.5em;
-}{
-  font-size: 0.9em;
-  line-height: 1.6em;
-}{
-  padding-bottom: 1rem;
-}{
-  padding: 40px 0;
-}
-    h1 {
-  font-size: 4.8rem;
-  text-indent: -2px;
-}
-    h2 {
-  font-size: 3.8rem;
-}
-    h3 {
-  font-size: 3.3rem;
-}
-    h4 {
-  font-size: 2.8rem;
-}
+  blockquote {
+    margin-left: 0;
+  }
+
+  .site-head {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 240px;
+    padding: 15% 0;
+  }
+
+  .blog-title {
+    font-size: 4rem;
+    letter-spacing: -1px;
+  }
+
+  .blog-description {
+    font-size: 1.7rem;
+    line-height: 1.5em;
+  }
+
+  .post {
+    font-size: 0.9em;
+    line-height: 1.6em;
+  }
+
+  .post-template .post {
+    padding-bottom: 1rem;
+  }
+
+  .post-template .post-header {
+    padding: 40px 0;
+  }
+  h1 {
+    font-size: 4.8rem;
+    text-indent: -2px;
+  }
+  h2 {
+    font-size: 3.8rem;
+  }
+  h3 {
+    font-size: 3.3rem;
+  }
+  h4 {
+    font-size: 2.8rem;
+  }
 }
 
 /* ==========================================================================
@@ -1125,89 +1131,106 @@ margin on the iframe, cause it breaks stuff. */
 
 
 @media only screen and (max-width: 500px) {
-    .blog-logo 
-    .inner,
-    .pagination 
-    .post 
-    .site-head 
-    .blog-title 
-    .blog-description 
-    .post-template .post 
-    .post-template .post-header 
-    .post-content 
-    .post-content .full-img 
-    .post-meta 
-    .post-footer 
-    .post-footer .author 
-    .post-footer .share 
-    .post-footer .share 
-    .older-posts,
-    .newer-posts 
-    .page-number 
-    .site-footer; img {
-  max-height: 80px;
-}{
-  margin-left: 16px;
-  margin-right: 16px;
-  width: auto;
-}{
-  font-size: 0.8em;
-  line-height: 1.6em;
-  margin-left: 16px;
-  margin-right: 16px;
-  width: auto;
-}{
-  padding: 10% 0;
-}{
-  font-size: 3rem;
-}{
-  font-size: 1.5rem;
-}
-    h1, h2 {
-  font-size: 3rem;
-  letter-spacing: -1px;
-  line-height: 1.1em;
-}
-    h3 {
-  font-size: 2.8rem;
-}
-    h4 {
-  font-size: 2.3rem;
-}{
-  padding-bottom: 0;
-}{
-  padding: 30px 0;
-}img {
-  padding: 0;
-}{
-  margin: 0 -16px; /* get rid of margins */
-  max-width: 112%; /* fallback when calc doesn't work */
-  min-width: 0;
-  width: auto;
-  width: calc(100% + 32px); /* expand with to image + margins */
-}{
-  font-size: 1.3rem;
-}{
-  padding: 4rem 0;
-  text-align: center;
-}{
-  border-bottom: #ebf2f6 1px dashed;
-  margin: 0 0 2rem 0;
-  padding: 0 0 1.6rem 0;
-}{
-  position: static;
-  width: auto;
-}a {
-  margin: 1.4rem 0.8rem 0 0.8rem;
-}{
-  margin: 10px 0;
-  position: static;
-}{
-  display: block;
-}{
-  font-size: 1.1rem;
-  margin-top: 6rem;
-}
+  .blog-logo img {
+    max-height: 80px;
+  }
+  .inner,
+  .pagination {
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .post {
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 0.8em;
+    line-height: 1.6em;
+  }
+
+  .site-head {
+    padding: 10% 0;
+  }
+
+  .blog-title {
+    font-size: 3rem;
+  }
+
+  .blog-description {
+    font-size: 1.5rem;
+  }
+  h1, h2 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    line-height: 1.1em;
+  }
+  h3 {
+    font-size: 2.8rem;
+  }
+  h4 {
+    font-size: 2.3rem;
+  }
+
+  .post-template .post {
+    padding-bottom: 0;
+  }
+
+  .post-template .post-header {
+    padding: 30px 0;
+  }
+
+  .post-content img {
+    padding: 0;
+  }
+
+  .post-content .full-img {
+    width: auto;
+    width: calc(100% + 32px); /* expand with to image + margins */
+    margin: 0 -16px; /* get rid of margins */
+    min-width: 0;
+    max-width: 112%; /* fallback when calc doesn't work */
+  }
+
+  .post-meta {
+    font-size: 1.3rem;
+  }
+
+  .post-footer {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .post-footer .author {
+    margin: 0 0 2rem 0;
+    padding: 0 0 1.6rem 0;
+    border-bottom: #EBF2F6 1px dashed;
+  }
+
+  .post-footer .share {
+    position: static;
+    width: auto;
+  }
+
+  .post-footer .share a {
+    margin: 1.4rem 0.8rem 0 0.8rem;
+  }
+
+  .older-posts,
+  .newer-posts {
+    position: static;
+    margin: 10px 0;
+  }
+
+  .page-number {
+    display: block;
+  }
+
+  .site-footer {
+    margin-top: 6rem;
+    font-size: 1.1rem;
+    margin-top: 6rem;
+  }
 }
 
 /* ==========================================================================

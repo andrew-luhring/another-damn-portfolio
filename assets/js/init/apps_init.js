@@ -8,9 +8,9 @@ define([
       $interpolateProvider.endSymbol(']]');
   }
 
+
   /**
    * AngularModule factory.
-   *
    * @param {string} - name - name of the module.
    * @param {array} - depsArr - the array of dependencies.
    * @param {array} - configArr - the configuration array.
@@ -25,7 +25,6 @@ define([
   /**
    *
    * Apps - a container for all the angular apps.
-   *
    * @returns {object} - an object that contains all the angular modules as properties.
    */
   var Apps = Object.create(Object.prototype, {
@@ -34,8 +33,7 @@ define([
 
 
     /**
-   * An angular module that is responsible for all interactions that are gallery related
-   *
+   * An angular module that is responsible for all interactions that are gallery related.
    * @type {Object}
    */
   Apps.gallery = new AngularModule('gallery'
@@ -52,6 +50,10 @@ define([
 //  }
   console.log (Apps);
 
-
+  /**
+   * A module which exports all angular modules.
+   * @exports init/apps_init
+   * @version 1.0
+   */
 return Apps;
 });
