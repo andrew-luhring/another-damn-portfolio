@@ -3,7 +3,7 @@
         "allowUnknownTags": true
     },
     "source": {
-        "include": ["./js", "./tests", "tests/", "js", "filetest_jsdoc.js"]
+        "include": ["./assets/js", "./tests", "./tests/", "./assets/js/"]
 
     },
     "plugins": [],
@@ -12,7 +12,7 @@
         "monospaceLinks": false
     },
     "opts": {
-        "template": "node_modules/ink-docstrap/template",
+        "template": "../node_modules/ink-docstrap/template",
         "encoding": "utf8",
         "destination": "./jsdoc/",
         "recurse": true,

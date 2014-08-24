@@ -1,5 +1,15 @@
+/**
+ * A module of Helpers
+ * @module Helpers
+ */
 define([], function(){
 "use strict";
+
+  /**
+   * @alias module:Helpers
+   * @param devMode
+   * @constructor
+   */
 function Helpers(devMode){
   this.dev = devMode;
 }
@@ -9,7 +19,6 @@ function Helpers(devMode){
    *      pass in location changes only when this isnt being run by karma...
    *      so you don't get the 'karma did a full page reload' error;
    *      Cant get full test coverage on isKarma(); use it with a grain of salt.
-   *
    * @param {object} -   isWindow - a window object
    * @param {object}  -  location - intended location/url to check
    * @returns {boolean}

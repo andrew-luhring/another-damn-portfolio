@@ -5,7 +5,8 @@ define([
   "use strict";
 
   return ['$scope', 'DataService', function($scope, DataService){
-    var data = DataService.list();
+    var data = "derl" //DataService.list();
+      console.log(_.keys(DataService));
     this.meta = $scope;
     this.data = data;
   }];
