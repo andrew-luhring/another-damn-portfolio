@@ -26,6 +26,5 @@ assets/css/*
 assets/styleguide/
 assets/styleguide/*
 
-*jsdoc*
-jsdoc/*
-assets/portfolio/**/*
+assets/jsdoc/
+assets/jsdoc/*

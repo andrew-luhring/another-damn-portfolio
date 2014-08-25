@@ -5,10 +5,16 @@ define([
   "use strict";
 
   return ['$scope', 'DataService', function($scope, DataService){
-    var data = "derl" //DataService.list();
-      console.log(_.keys(DataService));
+
+
+
     this.meta = $scope;
-    this.data = data;
+    DataService.list();
+
+
+
+    $scope.GalleryController = this;
+    return $scope.CompanyController ;
   }];
 
 });

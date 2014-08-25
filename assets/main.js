@@ -66,8 +66,8 @@
     };
   }
   requirejs([
-      'angular' , 'jquery', 'init/apps_bootstrap' ]
-    , function(angular, jquery, jquery_bootstrap, apps_bootstrap) {
+      'angular' , 'jquery' ]
+    , function(angular, jquery) {
     }
   );
 })();
