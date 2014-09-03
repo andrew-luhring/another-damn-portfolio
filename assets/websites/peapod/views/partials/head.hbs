@@ -1,0 +1,16 @@
+<base href="/" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<script type="text/javascript" src="javascripts/lib/modernizr.js"></script>
+<link rel="stylesheet" href="/hbs_version/stylesheets/style.css" />
+<!--<link rel="stylesheet" href="/jhtml_version/stylesheets/splash_designs.css" />-->
+<link rel="stylesheet" href="/hbs_version/stylesheets/style.css.map" />
+<link rel="stylesheet" href="/hbs_version/stylesheets/local.css" />
+<link rel="stylesheet" href="/hbs_version/stylesheets/local.css.map" />
+<script type="text/javascript" src="javascripts/lib/angular.js"></script>
+<script>
+angular.module('dft', []).config(function($interpolateProvider){
+        $interpolateProvider.startSymbol('[[').endSymbol(']]');
+    }
+);
+</script>

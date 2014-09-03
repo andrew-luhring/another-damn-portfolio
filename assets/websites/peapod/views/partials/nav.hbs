@@ -1,0 +1,35 @@
+<nav class="meta_nav">
+	<ul>
+		<li class="nav_category">
+			<div>Splash Pages</div>
+			<ul class="sub_nav">
+				{{#each splashPages}}
+				<li>
+
+					<a href="{{url}}">{{title}}</a>
+				</li>
+			{{/each}}
+			</ul>
+		</li>
+        <li class="nav_category">
+	        <div>Error Pages</div>
+			<ul class="sub_nav">
+				{{#each errorPages}}
+					<li>
+						<a href="{{url}}">{{title}}</a>
+					</li>
+				{{/each}}
+			</ul>
+		</li>
+        <li class="nav_category">
+	        <div>Other Pages</div>
+        <ul class="sub_nav">
+			{{#each otherPages}}
+                <li>
+                    <a href="{{url}}">{{title}}</a>
+                </li>
+			{{/each}}
+        </ul>
+    </li>
+	</ul>
+</nav>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>tests</title>
+{{>head_stuff}}
+	</head>
+	<body class="errors">
+		{{>nav}}
+		<main id="error">
+
+			<header>
+				<h1> {{ header }} </h1>
+		
+				<h2> {{ subheadline }} </h2>
+			</header>
+{{#with this.page}}
+			<div class="img_holder">
+				<img src="{{img.src}}" alt="{{img.alt}}"/>
+			</div>
+		
+			<section class="exit">
+				<header>
+					<h1> {{ exit }} </h1>
+				</header>
+				<a class="big_button" href="{{button.href}}"> <span>{{button.text}} </span></a>
+				<img class="arrows" src="/images/arrows.png" alt="arrows"/>
+			</section>
+{{/with}}
+		</main>
+{{>end_scripts}}
+	</body>
+</html>

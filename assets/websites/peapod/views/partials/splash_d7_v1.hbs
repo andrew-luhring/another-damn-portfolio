@@ -1,0 +1,43 @@
+{{!< default}}
+
+<main class="test main" ng-controller="Btn_Align" >
+    {{#with this.page}}
+        <section class="col3 " id="{{id}}">
+	    <figure class="top_banner top">
+	        <img src="{{top_banner.src}}" class="full dynamic" alt="banner">
+	        <figcaption>{{top_banner.figcaption}}</figcaption>
+	    </figure>
+	    <header id="{{id}}" class="page_headline">
+	        <h1>{{{headline}}}</h1>
+	    </header>
+
+	    {{#each subsections}}
+	            <section id="{{id}}" class="subsec">
+	            <figure class="subsec_fig">
+	                <img class="subsec" src="{{{figure.src}}}" alt="{{figure.alt}}" />
+	                <figcaption>{{figure.caption}}</figcaption>
+	            </figure>
+		        <div class="subsec_content">
+	                <header>
+	                    <h1>{{{headline}}}</h1>
+	                </header>
+		            <div class="subsec_txt">
+		                {{{text}}}
+		            </div>
+			        {{#everyOther @index 2 }}
+				        {{#each button}}
+                            <button data-action="{{action}}" class="{{class}} [[align]] subsec_btn" id="{{id}}" type="{{type}}" >{{text}}</button>
+				        {{/each}}
+			        {{else}}
+				        {{#each button}}
+                            <button data-action="{{action}}" class="{{class}} [[modify]] subsec_btn" id="{{id}}" type="{{type}}" >{{text}}</button>
+				        {{/each}}
+			        {{/everyOther}}
+
+	            </div>
+	        </section>
+        {{/each}}
+    </section>
+    {{/with}}
+</main>
+

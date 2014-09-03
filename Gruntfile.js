@@ -108,9 +108,7 @@ module.exports = function(grunt) {
       , '!tests/unit/examples/**'
     ]
     , backendF = [
-        './controller.js'
-      , './Gruntfile.js'
-      , './server.js'
+       './Gruntfile.js'
       , './config/*.js'
     ]
 
@@ -348,20 +346,6 @@ module.exports = function(grunt) {
     grunt.task.run('karma:unit:start', 'watch');
   });
   grunt.registerTask(                 "jsdoc",                        "run jsdoc", ['shell:jsdoc']);
-  grunt.registerTask(                 "push",                         "removes old documentation + styleguide, runs jshint, compiles less, copies files to build directory.", [
-      'clean', 'jshint', 'less', 'exec:push']);
-  grunt.registerTask(                 "fab",                           "removes old documentation + styleguide, runs jshint, compiles less, copies files to build directory.", [
-      'clean'
-    , 'jshint'
-    , 'less'
-    , 'exec:push'
-    , 'exec:fab_main'
-    , 'exec:fab_css'
-    , 'exec:fab_js'
-    , 'exec:fab_tests'
-    , 'exec:fab_ang'
-    , 'exec:fab_less'
-  ]);
   grunt.registerTask(                 "verify",                       "checks build for errors", [
     'jshint'
   , 'shell:less'

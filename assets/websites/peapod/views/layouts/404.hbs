@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html >
+<head>
+    <title>tests</title>
+{{>head_stuff}}
+</head>
+<body class="errors">
+{{>nav}}
+<main id="error">
+
+	<header>
+		<h1> {{ header }} </h1>
+		<h2> {{ subheadline }} </h2>
+	</header>
+{{#with this.page}}
+	<div class="img_holder">
+		<img src="{{img.src}}" alt="{{img.alt}}"  />
+	</div>
+	
+	<ul class="exit">
+		{{#each button}}
+			<li><a href="{{this.href}}" >{{this.text}}</a></li>
+		{{/each}}
+	</ul>
+	{{/with}}
+</main>
+
+{{>end_scripts}}
+</body>
+</html>

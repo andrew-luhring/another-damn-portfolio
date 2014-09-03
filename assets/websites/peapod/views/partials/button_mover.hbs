@@ -1,0 +1,31 @@
+
+
+
+<section ng-app="dft">
+    <form name="btn_align" data-send="[[align]]">
+        <fieldset>
+            <legend>odd button alignment</legend>
+            <label for="left">left</label>
+            <input id="left" type="radio" ng-model="align" value="left" />
+
+            <label for="center">center</label>
+            <input id="center" type="radio" ng-model="align" value="center"  />
+
+            <label for="right">right</label>
+            <input id="right" type="radio" ng-model="align" value="right" />
+        </fieldset>
+	    <fieldset>
+            <legend>even button alignment</legend>
+            <label for="left">left</label>
+            <input id="left" type="radio" ng-model="modify" value="left" />
+
+            <label for="center">center</label>
+            <input id="center" type="radio" ng-model="modify" value="center"  />
+
+            <label for="right">right</label>
+            <input id="right" type="radio" ng-model="modify" value="right" />
+        </fieldset>
+    </form>
+</section>
+<output>[[align]]</output>
+<output>[[modify]]</output>

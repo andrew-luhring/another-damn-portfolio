@@ -66,7 +66,9 @@
     };
   }
   requirejs([
-      'angular' , 'jquery' ]
+      'angular'
+    , 'jquery'
+    ]
     , function(angular, jquery) {
     }
   );

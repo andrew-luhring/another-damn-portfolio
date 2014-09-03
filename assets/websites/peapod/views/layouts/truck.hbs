@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html >
+<head>
+    <title>HTML5 + CSS3 Truck</title>
+{{>head_stuff}}
+	<link rel="stylesheet" href="css/truck.css" />
+</head>
+<body class="errors">
+
+	<section ng-app="truck">
+		<section id="wrapper" ng-controller="Truck">
+			<section class="controls">
+				<fieldset >
+					<legend>Rotation</legend>
+					<div>
+						<label for="xRotation">X:  [[rotation.x]] </label>
+						<input id="xRotation" ng-model="rotation.x" type="range" min="-180" max="180">
+
+					</div>
+					<div>
+						<label for="yRotation">Y:  [[rotation.y]]</label>
+						<input id="yRotation" ng-model="rotation.y" type="range" min="-180" max="180">
+
+					</div>
+					<div>
+						<label for="zRotation">Z:  [[rotation.z]]</label>
+						<input id="zRotation" ng-model="rotation.z" type="range" min="-180" max="180">
+
+					</div>
+					<span>[[ rotation.x  ]] [[ rotation.y  ]] [[ rotation.z  ]]</span>
+				</fieldset>
+				<fieldset>
+					<legend>Translation</legend>
+					<div>
+						<label for="xTranslation">X:  [[translation.x]]</label>
+						<input id="xTranslation" ng-model="translation.x" type="range" min="-4000" max="4000">
+
+					</div>
+					<div>
+						<label for="yTranslation">Y:  [[translation.y]]</label>
+						<input id="yTranslation" ng-model="translation.y" type="range" min="-1000" max="1000">
+
+					</div>
+					<div>
+						<label for="zTranslation">Z:   [[translation.z]]</label>
+						<input id="zTranslation" ng-model="translation.z" type="range" min="-1000" max="1000">
+
+					</div>
+					<span>[[ translation.x  ]] [[ translation.y  ]] [[ translation.z  ]]</span>
+				</fieldset>
+				<fieldset>
+					<legend>Animation</legend>
+					<div>
+						<label for="speed">Animation speed</label>
+						<input id="speed" ng-model="animation.speed" type="range" min="0" max="10">
+					</div>
+					<span> [[animation.speed]] seconds</span>
+				</fieldset>
+			</section>
+			<div id="zderp">
+				<div id="truck" style="
+						-webkit-transform: rotateX([[rotation.x]]deg) rotateY([[rotation.y]]deg) rotateZ([[rotation.z]]deg) translateX([[translation.x]]px) translateY([[translation.y]]px) translateZ([[translation.z]]px);
+						-moz-transform: rotateX([[rotation.x]]deg) rotateY([[rotation.y]]deg) rotateZ([[rotation.z]]deg) translateX([[translation.x]]px) translateY([[translation.y]]px) translateZ([[translation.z]]px);
+						-ms-transform: rotateX([[rotation.x]]deg) rotateY([[rotation.y]]deg) rotateZ([[rotation.z]]deg) translateX([[translation.x]]px) translateY([[translation.y]]px) translateZ([[translation.z]]px);
+						-o-transform: rotateX([[rotation.x]]deg) rotateY([[rotation.y]]deg) rotateZ([[rotation.z]]deg) translateX([[translation.x]]px) translateY([[translation.y]]px) translateZ([[translation.z]]px);
+						transform: rotateX([[rotation.x]]deg) rotateY([[rotation.y]]deg) rotateZ([[rotation.z]]deg) translateX([[translation.x]]px) translateY([[translation.y]]px) translateZ([[translation.z]]px);
+						-webkit-transition: -webkit-transform [[animation.speed]]s;
+						-moz-transition: -moz-transform [[animation.speed]]s;
+						-ms-transition: -ms-transform [[animation.speed]]s;
+						-o-transition: -o-transform [[animation.speed]]s;
+						transition: transform [[animation.speed]]s;
+						" >
+				{{>engine}}
+				{{>engine_straight}}
+
+					<div class="front_window driver_side">
+						<div class="front_window_inner window"></div>
+						<div class="front_window_inner window"></div>
+					</div>
+					<div class="front_window passenger_side">
+						<div class="front_window_inner window"></div>
+						<div class="front_window_inner window"></div>
+					</div>
+				{{>body}}
+					<!--front driver side tire-->
+					<div class="wheel   driver_side    front_wheel      front_view">
+						<div>
+							<div class="tires">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+					<div class="wheel   driver_side    front_wheel      front_view      inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="tire        driver_side    front_wheel      horizontal"></div>
+					<div class="tire        driver_side    front_wheel      vertical"></div>
+					<div class="wheel   driver_side    front_wheel      back_view      inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="wheel   driver_side    front_wheel      back_view">
+						<div>
+							<div class="tires">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+					<!--front passenger side tire-->
+					<div class="wheel   passenger_side      front_wheel      front_view">
+						<div>
+							<div class="tires">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+					<div class="wheel   passenger_side      front_wheel      front_view      inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="tire        passenger_side      front_wheel      horizontal"></div>
+					<div class="tire        passenger_side      front_wheel      vertical"></div>
+					<div class="wheel   passenger_side      front_wheel      back_view      inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="wheel   passenger_side      front_wheel      back_view">
+						<div>
+							<div class="tires ">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+
+					<!--back driver side tire-->
+
+					<div class="wheel   driver_side          rear_wheel         front_view">
+						<div>
+							<div class="tires back_view">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+					<div class="wheel   driver_side          rear_wheel         front_view      inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="tire        driver_side          rear_wheel         horizontal"></div>
+					<div class="tire        driver_side          rear_wheel         vertical"></div>
+					<div class="wheel   driver_side          rear_wheel         back_view      inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="wheel   driver_side          rear_wheel         back_view">
+						<div>
+							<div class="tires back_view">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+
+					<!--back passenger side tire-->
+
+					<div class="wheel   passenger_side        rear_wheel        front_view">
+						<div>
+							<div class="tires back_view">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+					<div class="wheel   passenger_side        rear_wheel        front_view     inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="tire        passenger_side        rear_wheel        horizontal"></div>
+					<div class="tire        passenger_side        rear_wheel        vertical"></div>
+					<div class="wheel   passenger_side        rear_wheel        back_view      inside">
+						<div>
+							<div class="tires"></div>
+						</div>
+					</div>
+					<div class="wheel   passenger_side        rear_wheel        back_view">
+						<div>
+							<div class="tires back_view">
+								{{>tire}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section><!-- change this  section (ng-app) to a div.  -->
+	{{>end_scripts}}
+<script type="text/javascript" async>
+	(function($){
+		$(document).ready(function(){
+			var urls = [
+				"https://status.github.com/api/status.json"
+			,   "https://status.github.com/api/messages.json"
+			,   "https://status.github.com/api/last-message.json"
+			];
+			$.each(urls, function(index){
+				$.ajax({
+					url: urls[index]
+					,   crossDomain: true
+					,   dataType: 'jsonp'
+				}).done(function(data){
+						var keys = Object.keys(data);
+
+							for(var j = 0; j < keys.length; j++){
+								console.log(keys[j] + " : " + data[keys[j]]);
+							}
+				});
+			})
+		});
+	})(jQuery)
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<section ng-app="template" id="template">
+	<header class="page_headline">
+		<h1>So you need to create a new feature?</h1>
+		<h2>Template Maker</h2>
+	</header>
+	<fieldset ng-model="existance" id="existance">
+		<legend >first things first. what do you <em>need?</em></legend>
+		<div>
+			<label for="scss">I need <strong>style</strong>! <span class="tooltip"  role="tooltip"> ( we're all glad you're aware of it. nobody wanted to say anything. )</span></label>
+			<input type="checkbox" name="prepare" value="scss" />
+		</div>
+		<div>
+			<label for="js">I need <strong>behavior</strong>! <span class="tooltip"  role="tooltip">( what you <em>need</em> to do is calm down.. )</span></label>
+			<input type="checkbox" name="prepare" value="js" />
+		</div>
+		<div>
+			<label for="hbs">I need <strong>content</strong> and whatnot!  <span class="tooltip"  role="tooltip"> ( calm down, dude. there's no need for exclamation marks. i'm right here. ) </span></label>
+			<input type="checkbox" name="prepare" value="hbs" />
+		</div>
+	</fieldset>
+	<fieldset ng-model="scss">
+		<div id="testor">
+			<span>^</span>
+		<select list="opts" >
+			<datalist id="opts">
+				<option>derp</option>
+				<option>herp</option>
+				<option>serp</option>
+				<option>merp</option>
+				<option>perp</option>
+				<option>werk</option>
+				<option>dare to be different</option>
+			</datalist>
+		</select>
+		</div>
+		<legend>your scss file</legend>
+		<div class="file_name">
+			<label for="scss_filename">will be named:</label>
+			<input name="scss_filename" type="text" ng-model="scss.name"/>
+		</div>
+		[[scss.name]]
+		<fieldset>
+			<legend>and it will be a... partial? </legend>
+			<div>
+				<label>Hell yes it will be!<span class="tooltip"  role="tooltip"> ( it will be a partial )</span></label>
+				<input type="radio" name="scss_file_partial" ng-model="scss.partial" value="true" />
+			</div>
+			<div>
+				<label>Like hell it will be! <span class="tooltip"  role="tooltip"> ( it won't be a partial)</span></label>
+				<input type="radio" name="scss_file_partial" ng-model="scss.partial" value="false" />
+			</div>
+		</fieldset>
+		</label>
+	</fieldset>
+	<fieldset ng-model="js">
+		<legend>Your js file</legend>
+
+		<div class="file_name">
+			<label for="js_filename">will be named:</label>
+			<input name="js_filename" type="text" ng-model="js.name"/>
+		</div>
+		[[js.name]]
+
+		<fieldset>
+			<legend> You're going to need to test it, right? </legend>
+			<div>
+				<label>What? Did you think this was some kind of game?! This is REAL LIFE- not some world full of... nice... things!  <span class="tooltip"  role="tooltip"> ( well...at least you have a computer that loves you. )</span></label>
+				<input type="radio" name="js_test" ng-model="js.test" value="true" />
+			</div>
+			<div>
+				<label>No way! I'm on a mission sent by God - nothing will go wrong and nothing will stand in my way! <span class="tooltip"  role="tooltip"> ( ...i'll take that s a no. )</span></label>
+				<input type="radio" name="js_test" ng-model="js.test" value="false" />
+			</div>
+
+		</fieldset>
+		</label>
+	</fieldset>
+	<fieldset ng-model="hbs">
+		<legend>Your hbs file</legend>
+		<div class="file_name">
+			<label for="hbs_filename">will be named:</label>
+			<input name="hbs_filename" type="text" ng-model="hbs.name"/>
+		</div>
+		[[hbs.name]]
+		<fieldset>
+			<legend>and it will be a partial</legend>
+			<div>
+				<label>Hell yes it will be!<span class="tooltip"  role="tooltip"> ( it will be a partial)</span></label>
+				<input type="radio" name="hbs_partial" value="true" />
+			</div>
+			<div>
+				<label>Like hell it will be! <span class="tooltip"  role="tooltip"> ( it won't be a partial)</span></label>
+				<input type="radio" name="hbs_partial" value="false" />
+			</div>
+		</fieldset>
+		</label>
+	</fieldset>
+
+
+</section>
