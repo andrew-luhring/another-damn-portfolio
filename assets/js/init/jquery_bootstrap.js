@@ -1,7 +1,7 @@
 define([
     'jquery'
   , 'com/utility'
-], function($, utility, q){
+], function($, utility){
   "use strict";
 
   var animateVisibility = utility.animateVisibility
@@ -21,12 +21,10 @@ define([
     this.obj = $id;
     return this;
   }
-
-  // TODO: figure out what I was trying to do here.
-  JqInit.prototype.inject = function(injectItem, injectTo){
-    var $obj = this
-      , _injectTo_ = injectTo || $obj;
-  };
+  function initiateDom($){
+    $(".no-js").removeClass("no-js");
+    $(".gallery-caption").addClass("hidden");
+  }
   /**
    * reduces font-size if text is too large.
    * @param elem
@@ -72,17 +70,16 @@ define([
 
   };
 
+
   $(document).ready(function(){
-    $(".no-js").removeClass("no-js");
-//    var $tst = new JqInit('.nav_main li a');
-//    $tst.dynamicText(15);
+    initiateDom($);
   });
 
   /**
    * returns an instance of JqInit that protects itself from having prototypes appended to it.
    * @example var example = JqInit("#exaple", )
    */
-  return function(id, inject){
-    return (inject) ? new JqInit(id, inject) : new JqInit(id);
+  return function(id){
+    return new JqInit(id);
   };
 });

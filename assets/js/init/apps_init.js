@@ -7,8 +7,6 @@ define([
       $interpolateProvider.startSymbol('[[');
       $interpolateProvider.endSymbol(']]');
   }
-
-
   /**
    * AngularModule factory.
    * @param {string} - name - name of the module.
@@ -20,7 +18,6 @@ define([
   function AngularModule(name, depsArr, configArr ){
     return angular.module(name, depsArr).config(configArr);
   }
-
 
   /**
    *
@@ -43,12 +40,6 @@ define([
         interpolate($interpolateProvider);
       }
     ]);
-//    function(){
-//    return angular.module('gallery', []).config([
-//      '$interpolateProvider'
-//      , interpolate($interpolateProvider)]);
-//  }
-  console.log (Apps);
 
   /**
    * A module which exports all angular modules.

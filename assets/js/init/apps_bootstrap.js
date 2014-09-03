@@ -3,7 +3,7 @@ define([
      'require'
   ,  'angular'
   , 'gal/gallery'
-  ], function(require, angular, gallery) {
+], function(require, angular, gallery) {
   "use strict";
 
   /**
