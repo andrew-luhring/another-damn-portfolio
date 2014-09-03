@@ -1,0 +1,14 @@
+{
+  "name": "plunk",
+  "version": "0.0.0",
+  "description": "``` main  |=> _init             [mocha, chai]     |=> init          [jquery]     |=> _script       [mocha, chai]         |=> script    [angular]           |=> done    [mocha]",
+  "main": "controller.js",
+  "scripts": {
+    "start": "node --harmony $* ./node_modules/.bin/node-dev controller.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository" : ""
+
+}

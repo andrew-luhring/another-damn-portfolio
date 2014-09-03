@@ -1,0 +1,51 @@
+@import "bourbon/bourbon";
+@import "flex-box";
+
+.adss_footer{
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+        clear: both;
+        overflow: hidden;
+        &:before, &:after {
+            content: "";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+}
+.flexbox .adss_footer{
+        @include display(flex);
+        @include align-content(center);
+        @include justify-content(flex-start);
+}
+.adss_footer_section{
+    display: inline-table;
+    height: 100px;
+    border-right: 1px solid #ccc;
+    padding: 0 0 0 40px;
+    width: calc(100% / 4.5);
+    max-width: calc(100% / 4 - 10px);
+    @include box-sizing(border-box);
+    a{
+        color: #069;
+        &:hover{
+          color: #666;
+        }
+        }
+    &:last-of-type{
+        border-right: none;
+    }
+}
+.adss_footer_link{
+    margin: auto;
+    display: block;
+    padding:2px 0px;
+    font-size: 11px;
+}
+.adss_info_cite{
+  font-size: 11px;
+  color: #333;
+  float: left;
+}

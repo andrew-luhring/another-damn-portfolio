@@ -1,0 +1,148 @@
+@import "imports";
+
+body, article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary, dl, dd, dt, img {
+margin: 0;
+padding: 0;
+}
+section, article, iframe, img {
+-webkit-transform: translateZ(0);
+-webkit-backface-visibility: hidden;
+}
+  menu, ol, ul {
+padding: 0 0 0 40px;
+}
+     dl, menu, ol, ul {
+margin: 1em 0;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+html, button, input, select, textarea {
+font-family: Serif;
+}
+@import "3ptnav";
+$adss_packagelink : #006699;
+$adss_packagelink-hover : #666;
+$trb_3pt_nav_bg_clr: #282828;
+$link-color : #333;
+$link-color-hover : #05f;
+@mixin margin-clear($amt){
+	-webkit-margin-before:$amt;
+	-moz-margin-before:$amt;
+	-ms-margin-before:$amt;
+	-o-margin-before:$amt;
+	margin-before:$amt;
+
+	-webkit-margin-after:$amt;
+	-moz-margin-after:$amt;
+	-ms-margin-after:$amt;
+	-o-margin-after:$amt;
+	margin-after:$amt;
+
+	-webkit-margin-before:$amt;
+	-moz-margin-before:$amt;
+	-ms-margin-before:$amt;
+	-o-margin-before:$amt;
+	margin-before:$amt;
+
+	-webkit-margin-start:$amt;
+	-moz-margin-start:$amt;
+	-ms-margin-start:$amt;
+	-o-margin-start:$amt;
+	margin-start:$amt;
+
+	-webkit-margin-end:$amt;
+	-moz-margin-end:$amt;
+	-ms-margin-end:$amt;
+	-o-margin-end:$amt;
+	margin-end:$amt;
+
+	-webkit-padding-start:$amt;
+	-moz-padding-start:$amt;
+	-ms-padding-start:$amt;
+	-o-padding-start:$amt;
+	padding-start:$amt;
+
+}
+@mixin hs(){
+	h1, h2, h3, h4, h5,h6{
+		@content;
+	}
+}
+@include hs() {
+	-webkit-margin-after: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: normal;
+}
+ul, menu, dir {
+  display: block;
+}
+h2, *:-moz-any(article, aside, nav, section) h1 {
+  margin: 0 0 0 0;
+}
+h1{
+  margin:0 0 0 0;
+}
+
+html{
+	font-size: 62.5%;
+  }
+body{
+	font-size: 16px;
+	font-family: sans-serif;
+	margin: 8px auto;
+	margin: 0px auto;
+	overflow-x: visible;
+	overflow-y: visible;
+	background-color: #fff;
+  }
+li{
+	list-style-type: none;
+  }
+a{
+	text-decoration: none;
+  }
+body,  div[data-role~='page'] {
+	margin: 8px auto;
+	height: 100%;
+	width: 1140px ;
+  }
+a{
+	color: $link-color;
+	&:hover{
+		color: $link-color-hover;
+    }
+  }
+details{
+		position:relative;
+	ul{
+		@include margin-clear(0px);
+		font-size: 11px;
+		margin-top: 12px;
+	}
+	li{
+		list-style-type: disc;
+		margin-bottom: 10px;
+		position: relative;
+		left:15px;
+	}
+	summary{
+		margin: 2px 0;
+	}
+	select{
+	width:188px;
+	margin: 20px auto;
+	}
+}
+
+.adss_inline{
+    display: inline !Important;
+}
+
+iframe{
+    border: none;
+}

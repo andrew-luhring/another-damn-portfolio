@@ -1,0 +1,392 @@
+@import "bourbon";
+@import "flex-box";
+
+$adss_packagelink : #006699;
+$adss_packagelink-hover : #666;
+$trb_3pt_nav_bg_clr: #282828;
+$link-color : #333;
+$link-color-hover : #05f;
+@mixin margin-clear($amt){
+	-webkit-margin-before:$amt;
+	-moz-margin-before:$amt;
+	-ms-margin-before:$amt;
+	-o-margin-before:$amt;
+	margin-before:$amt;
+
+	-webkit-margin-after:$amt;
+	-moz-margin-after:$amt;
+	-ms-margin-after:$amt;
+	-o-margin-after:$amt;
+	margin-after:$amt;
+
+	-webkit-margin-before:$amt;
+	-moz-margin-before:$amt;
+	-ms-margin-before:$amt;
+	-o-margin-before:$amt;
+	margin-before:$amt;
+
+	-webkit-margin-start:$amt;
+	-moz-margin-start:$amt;
+	-ms-margin-start:$amt;
+	-o-margin-start:$amt;
+	margin-start:$amt;
+
+	-webkit-margin-end:$amt;
+	-moz-margin-end:$amt;
+	-ms-margin-end:$amt;
+	-o-margin-end:$amt;
+	margin-end:$amt;
+
+	-webkit-padding-start:$amt;
+	-moz-padding-start:$amt;
+	-ms-padding-start:$amt;
+	-o-padding-start:$amt;
+	padding-start:$amt;
+
+}
+
+@import "package_module";
+@import "more-info-dual";
+
+
+//adss single column more info
+.adss_single_col{
+    #adss_page_header{
+        margin: 35px 0 12px 30px;
+        border-bottom: none;
+        h1{
+            font-size: 30px;
+            color: #333;
+        }
+        h2{
+            margin-top:5px;
+            font-size: 16px;
+        }
+    }
+    .adss_heading, .adss_heading_subtext{
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smooth: always;
+        font-smooth: always;
+        margin: 0 0 0 15px;
+    }
+    .adss_heading_subtext{
+        color: #999;
+    }
+    #adss_more_info{
+        top:3px;
+        ul, ol, dl {
+        @include margin-clear(0px);
+        }
+
+    }
+    .adss_more_info_module_title{
+
+    }
+    .adss_more_info_module{
+        width: 48%;
+        float:left;
+        &:nth-of-type(2){
+            padding-right: 0px;
+        }
+        .package_content{
+            float:left;
+        }
+    }
+    .adss_top{
+        margin-top:0;
+    }
+
+    .adss_img_placeholder{
+        width: 188px;
+        height:108px;
+        display:block;
+        background: black;
+    }
+    .adss_more_info_purchase{
+        clear:right;
+        position: absolute;
+        height: 100%;
+        display: block;
+        right:0px;
+        width: 59%;
+        width:calc(100% - 208px);
+        border-left: 1px solid #ccc;
+        padding-left:10px;
+        a, select{
+            position: absolute;
+            bottom:0px;
+            left:10px;
+        }
+        select{
+            width: 185px;
+        }
+        a{
+            text-transform: uppercase;
+            font-weight: bold;
+            background: #00758D;
+            color:white;
+            display: table;
+            font-size:10px;
+            line-height: 10px;
+            padding:8px 12px;
+            span{
+                display:table-cell;
+                vertical-align: middle;
+            }
+        }
+    }
+    .adss_more_info_description_2col{
+        width:50%;
+        float:left;
+    }
+    h6[rel="section"]{
+        font-size: 12px;
+    }
+    .adss_more_info_wrapper{
+    div.package_description{
+        text-transform: none;
+        font-weight: 500;
+        font-size:12px;
+        color: #333;
+    }
+    .package_image{
+        width: 198px !important;
+        height: 84px;
+        float:left;
+        .adss_img_placeholder{
+            height:84px;
+        }
+        img{
+            background: grey;
+            max-width:188px !important;
+            max-height: 84px ;
+        }
+    }
+    .adss_package_summary{
+        cursor: default;
+        font-size: 16px;
+        >h1,
+        >h2,
+        >h3,
+        >h4,
+        >h5,
+        >h6{
+            font-size: 16px;
+        }
+        font-family: "Georgia", serif;
+        color: #333;
+        margin-bottom:8px;
+    }
+    table.package_description{
+        width: auto;
+    }
+    td.adss_package_description_item{
+        width: 120px;
+        padding-top: 4px;
+        padding-bottom:4px;
+    }
+    .package_description{
+        .adss_package_description_item{
+            color: #333;
+            font-size: 12px;
+            line-height: normal;
+            margin-bottom:5px ;
+            list-style-type: none;
+            left:0;
+        }
+        li.adss_package_description_item:before{
+            content: "—";
+        }
+        .adss_description_item_rules{
+            margin-top:25px;
+            font-style: italic;
+            li:before{
+               content: " " !important;
+            }
+        }
+        select{
+            margin: 0px auto 10px auto;
+        }
+        p{
+            line-height: 16px;
+            @include margin-clear(0);
+            font-family: sans-serif;
+            color: #333;
+            font-size:12px;
+            font-weight:400;
+        }
+    }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    }
+    .package_content figure img{
+        margin: 10px 0px;
+    }
+    .adss_more_info_ad{
+        margin: 40px 0px 10px 50px;
+        float: left;
+        position: relative;
+        top: -30px;
+        h1{
+            cursor: default;
+            font-size: 16px;
+            font-family: "Georgia", serif;
+            color: #333;
+        }
+        p{
+            color: #333;
+            font-size: 12px;
+            line-height: normal;
+            list-style-type: none;
+            left: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+.adss_single_col{
+    .package_description{
+        margin-right: 20px;
+    }
+    details{
+        ul, li{
+            white-space: normal;
+        }
+    }
+    table.package_description tbody td {
+        white-space: nowrap;
+    }
+    table.package_description{
+        table-layout: auto;
+        thead{
+            white-space: normal;
+        }
+    }
+    section.package_description{
+        ul{
+            padding-left: 0;
+        }
+    }
+    .package_content {
+        img{
+            float: left;
+            width: 295px;
+        }
+        figcaption{
+            float:right;
+            position: static;
+            left: 10px;
+        }
+    }
+    cite{
+        font-size: 11px;
+        font-style: normal;
+        margin: 15px 0px;
+        display:block;
+    }
+    .adss_list_item_summary{
+        color: #333;
+    }
+    a.adss_more_info{
+        color: blue;
+    }
+}
+#distribution{
+width: 100%;
+details{
+    position: static;
+}
+    ul.adss_package_description{
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 18px;
+}
+    figure{
+        position:relative;
+    }
+    .adss_figure_number{
+        position: absolute;
+        z-index: 99999;
+        padding: 2px 6px;
+        border: 1px solid black;
+        border-radius: 50%;
+        font-size: 15px;
+        color:black;
+            transition: border-color, 1s, background, 1s;
+        &:hover{
+            border-color: #555;
+            background: rgba(255,255,255,0.3);
+            transition: border-color, 1s, background, 0.5s;
+        }
+    }
+}
+    .adss_package_description_item{
+      dt{
+          display: inline;
+      }
+
+    }
+      #one{
+        &:before{
+            content: "1.";
+        }
+              & + div{
+              margin-left: 14px;
+      }
+           dd{
+            top:30px;
+            left:70px;
+            }
+        }
+        #two{
+                &:before{
+            content: "2.";
+        }
+                      & + div{
+              margin-left: 14px;
+      }
+         dd{
+        top:85px;
+        left:88px;
+        }
+        }
+        #three{
+                &:before{
+            content: "3.";
+        }
+                      & + div{
+              margin-left: 14px;
+      }
+        dd{
+        top:120px;
+        left:112px;
+        }}
+        #four{
+                &:before{
+            content: "4.";
+        }
+                      & + div{
+              margin-left: 14px;
+      }
+        dd{
+        top:85px;
+        left:240px;
+        }}
+        #five{
+                &:before{
+            content: "5.";
+        }
+                      & + div{
+              margin-left: 14px;
+      }
+         dd{
+        top:158px;
+        left:190px;
+        }}

@@ -1,0 +1,246 @@
+h1, h2, h3, h4, h5, h6 {
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  font-weight: normal;
+}
+
+.adss_module_title {
+  display: table;
+  height: 50px;
+  border-bottom: 1px solid black;
+  background-color: #c0dfe5;
+}
+.adss_module_title h1 {
+  display: table-cell;
+  padding-left: 20px;
+  color: #333;
+  vertical-align: middle;
+  font: normal normal 100 24px "Georgia", serif;
+}
+
+.adss_package_image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-width: 188px;
+  max-height: 84px;
+}
+.adss_package_image img {
+  position: relative;
+  width: 188px;
+  height: 84px;
+}
+
+.adss_package_sm > header {
+  margin: 12px 0px 25px;
+  max-width: 188px;
+  color: #666;
+}
+.adss_package_sm > header h1 {
+  overflow: hidden;
+  height: 50px;
+  font: normal normal bolder 20px Arial, sans-serif;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+}
+.adss_package_sm > header h2 {
+  font: normal normal normal 11px Arial, sans-serif;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+}
+
+details, .adss_package_description {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+details summary, .adss_package_description summary {
+  color: #006699;
+}
+details summary:hover, .adss_package_description summary:hover {
+  color: #666666;
+  cursor: pointer;
+}
+
+thead.adss_package_summary th {
+  text-align: left;
+  font-weight: normal;
+}
+thead.adss_package_summary .adss_table_summary {
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+}
+
+.adss_package {
+  display: inline-block;
+  padding-right: 20px;
+  max-width: 264px;
+  width: 30%;
+}
+
+.adss_package_call_to_action a:hover {
+  color: #666;
+}
+
+.purchase {
+  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #aaaaaa));
+  background-image: -webkit-linear-gradient(white, #aaaaaa);
+  background-image: linear-gradient(white, #aaaaaa);
+  left: 0;
+  margin: auto;
+  padding: 5px 10px;
+  border: 1px solid #d5d5d5;
+  border-right-color: #a2a2a2;
+  border-bottom-color: #a2a2a2;
+  border-radius: 15px;
+  text-transform: uppercase;
+  font: normal normal bold 11px "Arial", sans-serif;
+}
+
+.more-info {
+  float: left;
+  padding: 7px 0px 7px;
+  border: none;
+}
+
+.flexbox .trb_adss_allContentWrapper,
+.flexbox .adss_package_wrapper,
+.flexbox .adss_package_sm {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+.flexbox .adss_package,
+.flexbox .adss_main_content {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+}
+.flexbox .trb_adss_allContentWrapper {
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flexbox .adss_package_wrapper {
+  -webkit-flex-flow: row;
+  -moz-flex-flow: row;
+  flex-flow: row;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.flexbox .adss_package_sm {
+  -webkit-flex-flow: column;
+  -moz-flex-flow: column;
+  flex-flow: column;
+}
+.flexbox #adss_page_header {
+  width: 100%;
+  margin: auto;
+  order: 1;
+  margin-top: 14px;
+}
+.flexbox .adss_main_content {
+  order: 3;
+  margin: auto;
+  margin-bottom: 20px;
+  width: auto;
+  min-width: 590px;
+  max-width: auto;
+}
+.flexbox #adss_left_nav_container {
+  order: 2;
+  min-width: 225px;
+}
+.flexbox .adss_package {
+  margin: 0 auto;
+  padding-right: 0;
+  max-width: 188px;
+  width: auto;
+}
+.flexbox .adss_package:first-of-type {
+  margin-left: 0;
+}
+.flexbox .adss_package:last-of-type {
+  margin-right: 50px;
+  margin-right: 0;
+}
+.flexbox .adss_package_sm > header, .flexbox .adss_package_content {
+  max-width: 188px;
+}
+
+.no-flexbox.flexboxlegacy .adss_package_wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-orient: inline-axis;
+  -moz-box-orient: inline-axis;
+  box-orient: inline-axis;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  width: 100%;
+}
+.no-flexbox.flexboxlegacy .adss_package {
+  position: relative;
+  top: 5px;
+  display: block;
+  margin-right: 60px;
+  max-width: 188px;
+}
+.no-flexbox.flexboxlegacy .adss_package:last-of-type {
+  margin-right: 0;
+}
+.no-flexbox.flexboxlegacy .adss_package_content {
+  margin-right: 20px;
+}
+
+.adss_package_call_to_action {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  font-size: 12px;
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.adss_package_call_to_action a {
+  margin-right: 5px;
+  color: #006699;
+}
+.adss_package_call_to_action a:hover {
+  color: #666666;
+}
+
+.purchase {
+  float: left;
+  flex: 1.2;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.more-info {
+  float: left;
+  flex: 2;
+}
+
+.no-flexbox .trb_adss_allContentWrapper {
+  min-width: 1140px;
+  width: 1140px;
+}

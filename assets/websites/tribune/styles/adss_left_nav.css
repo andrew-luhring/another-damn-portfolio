@@ -1,0 +1,126 @@
+h1, h2, h3, h4, h5, h6 {
+	-webkit-margin-after: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: normal;
+}
+/* left nav / adss_left_nav */
+#adss_left_nav_container {
+	float: left;
+}
+.adss_module_title {
+	width: 100%;
+}
+.adss_left_nav_section {
+	padding: 10px 32px 2px 0;
+	position: relative;
+}
+.adss_left_nav_section .nav_link a {
+	color: #006699;
+	font-size: 12px;
+}
+.adss_left_nav_section .nav_link a:hover {
+	color: #666666;
+}
+.adss_left_nav_section:first-of-type {
+	padding-top: 0px;
+}
+.adss_left_nav_section:first-of-type .adss_left_nav_section_heading {
+	border-top: none;
+}
+.adss_left_nav_section_heading {
+	margin-left: 0;
+	padding-top: 10px;
+	position: relative;
+	font-size: 11px;
+	font-family: "Arial", sans-serif;
+	color: #666666;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	line-height: 20px;
+	border-top: 1px solid #cccccc;
+	max-width: 251px;
+}
+.adss_nav_section {
+	margin: 0px;
+	position: relative;
+}
+.adss_nav_intro_see {
+	font-size: 12px;
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	float: left;
+	color: #999;
+}
+#adss_left_nav_container {
+	position: relative;
+	width: 288px;
+	margin: 0px 0px 0px 30px;
+	display: inline-block;
+	z-index: 2;
+	color: #666;
+}
+#adss_left_nav_container ul {
+	-webkit-margin-before: 0;
+	-moz-margin-before: 0;
+	-ms-margin-before: 0;
+	-o-margin-before: 0;
+	margin-before: 0;
+	-webkit-margin-after: 0;
+	-moz-margin-after: 0;
+	-ms-margin-after: 0;
+	-o-margin-after: 0;
+	margin-after: 0;
+	-webkit-margin-before: 0;
+	-moz-margin-before: 0;
+	-ms-margin-before: 0;
+	-o-margin-before: 0;
+	margin-before: 0;
+	-webkit-margin-start: 0;
+	-moz-margin-start: 0;
+	-ms-margin-start: 0;
+	-o-margin-start: 0;
+	margin-start: 0;
+	-webkit-margin-end: 0;
+	-moz-margin-end: 0;
+	-ms-margin-end: 0;
+	-o-margin-end: 0;
+	margin-end: 0;
+	-webkit-padding-start: 0;
+	-moz-padding-start: 0;
+	-ms-padding-start: 0;
+	-o-padding-start: 0;
+	padding-start: 0;
+	padding-left: 25px;
+	position: relative;
+}
+#adss_left_nav_container ul li.nav_link {
+	position: relative;
+	left: 5px;
+	padding: 2px 0;
+	white-space: nowrap;
+	width: 100%;
+}
+#adss_left_nav_container ul li.nav_link a {
+	white-space: nowrap;
+	width: 100%;
+	padding: 6px 0;
+}
+#adss_left_nav_container #adss_left_nav_header {
+	padding: 20px 0 10px 0;
+	background: white;
+}
+#adss_left_nav_container #adss_left_nav_header h3 {
+	font-size: 11px;
+	font-weight: 300;
+}
+#adss_left_nav_container #adss_left_nav_header h1 {
+	font-size: 24px;
+	letter-spacing: -0.5px;
+	font-weight: 900;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	margin: 0px;
+}

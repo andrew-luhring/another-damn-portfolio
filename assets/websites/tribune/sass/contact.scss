@@ -1,0 +1,198 @@
+$adss_packagelink : #006699;
+$adss_packagelink-hover : #666;
+$trb_3pt_nav_bg_clr: #282828;
+$link-color : #333;
+$link-color-hover : #05f;
+@mixin margin-clear($amt){
+	-webkit-margin-before:$amt;
+	-moz-margin-before:$amt;
+	-ms-margin-before:$amt;
+	-o-margin-before:$amt;
+	margin-before:$amt;
+
+	-webkit-margin-after:$amt;
+	-moz-margin-after:$amt;
+	-ms-margin-after:$amt;
+	-o-margin-after:$amt;
+	margin-after:$amt;
+
+	-webkit-margin-before:$amt;
+	-moz-margin-before:$amt;
+	-ms-margin-before:$amt;
+	-o-margin-before:$amt;
+	margin-before:$amt;
+
+	-webkit-margin-start:$amt;
+	-moz-margin-start:$amt;
+	-ms-margin-start:$amt;
+	-o-margin-start:$amt;
+	margin-start:$amt;
+
+	-webkit-margin-end:$amt;
+	-moz-margin-end:$amt;
+	-ms-margin-end:$amt;
+	-o-margin-end:$amt;
+	margin-end:$amt;
+
+	-webkit-padding-start:$amt;
+	-moz-padding-start:$amt;
+	-ms-padding-start:$amt;
+	-o-padding-start:$amt;
+	padding-start:$amt;
+
+}
+@mixin hs(){
+	h1, h2, h3, h4, h5,h6{
+		@content;
+	}
+}
+@include hs() {
+	-webkit-margin-after: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: normal;
+}
+
+.adss_contact{
+  width: 95%;
+  width: calc(100% - 50px);
+  padding-left: 50px;
+  float: none;
+  .adss_heading{
+      margin: 30px auto;
+  }
+}
+#adss_contact_info{
+  margin-bottom: 100px;
+}
+.adss_contact_section{
+  width: 32%;
+  width: calc(32%);
+  font: normal normal normal 20px "Georgia", serif;
+  display: inline-block;
+}
+#adss_contact_info > section.adss_contact_section:first-of-type {
+    border-right: 1px solid #000;
+}
+.adss_contact_hours{
+  font: normal normal normal 12px "Arial",sans-serif;
+  width:100%;
+  table, section{
+    border-spacing: 0px;
+    margin-left: 10px;
+  }
+  table{
+margin-bottom: 10px;
+  }
+  th, section h1{
+     text-align: left;
+     margin-top: 20px;
+     font-weight: bold;
+  }
+}
+#adss_holiday{
+  position: absolute;
+  width: 25%;
+  right: 75px;
+  height: 100%;
+  table{
+    position: relative;
+    top:2px;
+  }
+  > section{
+  color:#333;
+}
+}
+#adss_other_numbers{
+  margin-left:20px;
+  line-height:16px;
+    a{
+    padding:5px 0px;
+    margin: 5px 0px;
+  }
+  section{
+      margin-left: 0px;
+      font-size: 11px;
+      header h1{
+          font-size: 11px;
+      }
+    }
+ header h1{
+    font-size: 12px;
+    margin: 0px !important;
+  }
+
+  ul{
+    margin: 0px;
+    @include margin-clear(0);
+  }
+}
+#sales_contact{
+  padding-left: 20px;
+}
+#adss_faq{
+  width: 740px;
+  position: relative;
+  bottom: 30px;
+}
+.adss_faq_tab_header{
+  height:30px;
+  background: #069;
+  font-size: 11px;
+  color: white;
+  display: table;
+  width: 146px;
+
+  &:hover{
+      cursor: pointer;
+  }
+  h1{
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 11px;
+    text-align: center;
+  }
+}
+.adss_faq_tab{
+  display: inline-block;
+  float:left;
+  margin: 1px;
+  position:relative;
+}
+.adss_faq_tab_question_container{
+  position: absolute;
+  width: 740px;
+  left:0px;
+}
+.active .adss_faq_tab_header{
+  background: #e0ecf0;
+  color: #666;
+  cursor: auto;
+}
+.adss_question_header{
+font-family: "Arial", sans-serif;
+font-size: 20px;
+  color: #00758d;
+}
+.adss_question_body{
+  background: #e0ecf0;
+  padding: 25px 35px;
+  margin-bottom:10px;
+  max-width: 740px;
+}
+
+section.adss_contact_section.adss_contact_hours{
+margin: 0px;
+  table{
+    margin: 30px 20px -30px;
+  }
+}
+#adss_contact_info > section.adss_contact_section:first-of-type table {
+    margin-left: 0px;
+}
+.adss_table_hours td:nth-of-type(3) {
+    text-align: right;
+}
+
+

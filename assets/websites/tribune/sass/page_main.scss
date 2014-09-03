@@ -1,0 +1,39 @@
+#adss_page_header{
+	margin: 14px 0 0 35px;
+	padding:0 0 18px 0;
+	border-bottom: 1px solid black;
+}
+
+	.adss_heading{
+	font-size: 36px;
+	font-family: Georgia;
+	color: #333;
+	font-weight: 100;
+    -webkit-font-smoothing: antialiased;
+	}
+
+/*
+main aka featured packages.
+*/
+.trb_adss_allContentWrapper {
+  min-width: 1140px;
+  width: 1140px;
+  min-height: 1px;
+}
+#adss_packages,
+.adss_featured_packages,
+.adss_main_content, .adss_package_module{
+	margin: 0px auto 20px;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	float:right;
+
+}
+#adss_packages{
+  width: 792px;
+}
+.adss_package_module{
+  width:100%;
+}
+
