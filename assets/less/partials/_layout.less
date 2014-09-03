@@ -1,0 +1,260 @@
+.site-head {
+  display: table;
+  margin-bottom: 5rem;
+  position: relative;
+  width: 100%;
+}
+.blog-logo img {
+  display: block;
+  margin: 0 auto;
+  max-height: 100px;
+  width: auto;
+}
+.blog-title {
+
+}
+.blog-description {
+
+}
+
+
+.content{
+  display: flex;
+}
+.post {
+  flex: 1;
+  margin: 4rem auto;
+  padding-bottom: 4rem;
+  position: relative;
+}
+.post:after {
+  bottom: -5px;
+  content: "";
+  display: block;
+  height: 7px;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  width: 7px;
+}
+
+.post-title {
+  margin: 0;
+}
+.post-excerpt p {
+  margin: 1.6rem 0 0 0;
+}
+.post-meta {
+  display: inline-block;
+  margin: 0 0 5px 0;
+}
+.user-meta {
+  min-height: 77px;
+  padding: 0.3rem 40px 0 100px;
+  position: relative;
+}
+.user-image {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.user-name {
+  display: block;
+}
+.user-bio {
+  display: block;
+  max-width: 440px;
+}
+.publish-meta {
+  padding: 4.3rem 0 4rem 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.publish-heading {
+  display: block;
+}
+.publish-date {
+  display: block;
+}
+
+.post-template .post {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+.post-template .post:after {
+  display: none;
+}
+.post-template .post-header {
+  padding: 60px 0;
+}
+.post-template .blog-title {
+  display: inline-block;
+  padding: 2.5rem 0;
+}
+
+/* Keep images centred and within the bounds of the post-width */
+.post-content img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0.6em 0;
+}
+
+.post-content .full-img {
+  margin : 0;
+  max-width: none;
+  width: 100%;
+}
+
+/* The author credit area after the post */
+.post-footer {
+  margin: 4rem 0 0 0;
+  padding: 4rem 0 0 0;
+  position: relative;
+}
+
+.post-footer h4 {
+  margin: 0;
+}
+
+.post-footer p {
+  margin: 1rem 0;
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   6. Tag archive
+   ========================================================================== */
+
+.archive-template .site-head {
+  height: auto;
+  padding-bottom: 5rem;
+}
+
+.archive-template .blog-logo {
+  display: block;
+  margin-top: 5rem;
+}
+
+.tag-archive-header {
+  margin: 4rem auto;
+  max-width: 700px;
+  padding: 20px 0;
+  position: relative;
+
+}
+
+.tag-archive-header:after {
+  bottom: -5px;
+  display: block;
+  height: 7px;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  width: 7px;
+}
+
+.archive-template .blog-title {
+  display: inline-block;
+  padding: 2.5rem 0;
+}
+
+
+
+.gist table {
+  margin: 0;
+}
+
+.gist .line-number {
+  min-width: 25px;
+}
+
+.pagination {
+  margin: 4rem auto;
+  max-width: 700px;
+  position: relative;
+
+}
+
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+  display: inline-block;
+  padding: 0 15px;
+  position: absolute;
+
+}
+
+.older-posts {
+  right: 0;
+}
+
+.page-number {
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.newer-posts {
+  left: 0;
+}
+
+/* ==========================================================================
+   9. Footer - The bottom of every page
+   ========================================================================== */
+
+.site-footer {
+  margin: 8rem 0 0 0;
+  padding: 4rem 0;
+  position: relative;
+}
+.poweredby .icon-ghost:before {
+  margin-right: 0.2em;
+}
+.subscribe {
+  height: 28px;
+  left: 50%;
+  margin-left: -15px;
+  position: absolute;
+  top: -14px;
+  width: 28px;
+}
+
+/* The RSS icon, inserted via icon font */
+.subscribe:before {
+  left: 9px;
+  position: absolute;
+  top: 9px;
+ }
+/* CSS tooltip saying "Subscribe!" - initially hidden */
+.tooltip {
+  display: inline-block;
+  left: -21px;
+  padding: 4px 8px 5px 8px;
+  position: absolute;
+  top: -23px;
+}
+
+/* The little chiclet arrow under the tooltip, pointing down */
+.tooltip:after {
+  bottom: -4px;
+  content: "";
+  display: block;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  width: 0;
+  z-index: 220;
+}
+
+/* On hover, show the tooltip! */
+.subscribe:hover .tooltip {
+  top: -33px;
+}
