@@ -1,6 +1,7 @@
 define([
   'require'
 , 'angular'
+, 'ngSanitize'
 ], function(require, angular){
   "use strict";
   function interpolate($interpolateProvider){
@@ -24,9 +25,10 @@ define([
    * Apps - a container for all the angular apps.
    * @returns {object} - an object that contains all the angular modules as properties.
    */
-  var Apps = Object.create(Object.prototype, {
-    meta: { writable:true, configurable:true, value: "test", enumerable: true }
-  });
+  var Apps = Object.create(
+    Object.prototype, {
+      meta: { writable:true, configurable:true, value: "test", enumerable: true }
+    });
 
 
     /**
@@ -34,9 +36,9 @@ define([
    * @type {Object}
    */
   Apps.gallery = new AngularModule('gallery'
-    , []
-    , ['$interpolateProvider'
-    , function($interpolateProvider){
+    , ['ngSanitize']
+    , [ '$interpolateProvider'
+      , function($interpolateProvider){
         interpolate($interpolateProvider);
       }
     ]);
