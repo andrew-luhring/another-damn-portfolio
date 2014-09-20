@@ -13,6 +13,7 @@
   requirejs.onError = function (err) {
     console.log("error type:   "+ err.requireType);
     console.log('modules: ' + err.requireModules);
+    console.trace();
     if (err.requireType === 'timeout') {
       console.log('modules: ' + err.requireModules);
     }
@@ -26,11 +27,13 @@
 //        Frameworks
         'angular': 'lib/angular/angular'
       , 'angular.animate' : 'lib/angular-animate/angular-animate'
+      , 'ngSanitize' : 'lib/angular-sanitize/angular-sanitize'
       , 'lodash': 'lib/lodash/dist/lodash.compat'
       , 'jquery': 'lib/jquery/dist/jquery'
       , 'mixitup' : 'lib/mixitup/src/jquery.mixitup'
       , 'ui_router': 'lib/angular-ui-router/release/angular-ui-router'
       , 'mocks': 'lib/angular-mocks/angular-mocks'
+      , 'transform' : 'lib/xml-to-json/jquery.xml2json'
 
 //    Initialization
 //    -----------------------
@@ -46,11 +49,14 @@
       , galS : galS
     }
     , shim: {
-      'angular' : {'exports' : 'angular'}
+        'angular' : {'exports' : 'angular'}
       , 'angular.animate' : {deps: ['angular']}
       , 'mocks': {
           'deps': ['angular']
         , 'exports': 'angular.mock'
+      }
+      , 'ngSanitize': {
+          'deps': ['angular']
       }
       , 'ui_router' : ['angular']
     }
