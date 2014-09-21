@@ -1,25 +1,25 @@
 1. create screenshots of:
-  - [ ]  tribune
+  - [x]  tribune
+  - [x]  bythehand
   - [ ]  plunk
   - [ ]  peapod
   - [ ]  fabory
-  - [ ]  bythehand
   
 
 2. create alts for: 
-  - [ ]  tribune
+  - [x]  tribune
+  - [x]  bythehand
   - [ ]  plunk
   - [ ]  peapod
   - [ ]  fabory
-  - [ ]  bythehand
 
 
 3. create posts for:
-  - [ ]  tribune
+  - [x]  tribune
+  - [x]  bythehand
   - [ ]  plunk
   - [ ]  peapod
   - [ ]  fabory
-  - [ ]  bythehand
 
 
 4. generate html versions of:
