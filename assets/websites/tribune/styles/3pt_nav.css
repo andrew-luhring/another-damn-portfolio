@@ -339,13 +339,18 @@ iframe {
   border: none;
 }
 
-div[data-role~='adss_3ptnav'] {
+[data-role~='adss_3ptnav'] {
   height: 50px;
   position: relative;
   width: 1140px;
   height: 50px;
 }
-div[data-role~='adss_3ptnav'] h1, div[data-role~='adss_3ptnav'] h2, div[data-role~='adss_3ptnav'] h3, div[data-role~='adss_3ptnav'] h4, div[data-role~='adss_3ptnav'] h5, div[data-role~='adss_3ptnav'] h6 {
+
+[data-role~='adss_3ptnav'] h2{
+    float:right;
+}
+
+[data-role~='adss_3ptnav'] h1, div[data-role~='adss_3ptnav'] h2, div[data-role~='adss_3ptnav'] h3, div[data-role~='adss_3ptnav'] h4, div[data-role~='adss_3ptnav'] h5, div[data-role~='adss_3ptnav'] h6 {
   display: inline;
 }
 
@@ -386,7 +391,7 @@ nav.adss_3pt_nav li.adss_3pt_mainLink:hover a {
   padding: 11px 0px;
   width: 240px;
   float: left;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 30px;
 }
 .adss_3pt_logo img {
   display: block;

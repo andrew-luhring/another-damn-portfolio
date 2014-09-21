@@ -102,7 +102,9 @@ thead.adss_package_summary{
 .adss_package_call_to_action a:hover {
     color:#666;
 }
-
+.adss_package_wrapper{
+	padding-left: 20px;
+}
 .purchase{
     @include linear-gradient(#fff, #aaa);
     left: 0;

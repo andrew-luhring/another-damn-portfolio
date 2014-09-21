@@ -82,7 +82,9 @@ thead.adss_package_summary .adss_table_summary {
   max-width: 264px;
   width: 30%;
 }
-
+.adss_package_wrapper{
+    padding-left: 20px;
+}
 .adss_package_call_to_action a:hover {
   color: #666;
 }
