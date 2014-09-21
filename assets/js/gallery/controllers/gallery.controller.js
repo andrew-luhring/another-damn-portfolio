@@ -8,6 +8,10 @@ define([
     var gallery = this;
     this.meta = $scope;
 
+    var dat = DataService.data(this).then(function(data){
+      gallery.dat = data;
+        console.log(data);
+    })
 
     var list = DataService.list(this).then(function(data){
       var _data = data
@@ -21,7 +25,7 @@ define([
         , test;
       
       gallery.data = _data;
-      
+
       _.each(data, function(item){
 
         _.each(item['item'], function(j){
@@ -34,9 +38,9 @@ define([
       
       gallery.postsArr = postsArr;
       gallery.posts = postHtmlArr;
-      console.log (gallery);
-      
-      
+      console.log (gallery.postsArr);
+      console.log (gallery.dat);
+
 
 //!~!~!~rooGalleryImage --> removes <p> wrapper from before and after images in posts.
 // todo use that^ to make a regex to remove the parent p element via regular expression
