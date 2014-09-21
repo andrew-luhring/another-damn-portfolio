@@ -13,12 +13,13 @@
 
 {{! The main content area on the homepage }}
 <main class="content" role="main" ng-controller="GalleryController as gallery">
-  <article ng-repeat="gal in gallery.posts">
+  <article ng-repeat="gal in gallery.postsArr">
     <figure class="post-content">
       <figcaption class="gallery-caption">
         {{{title}}}
       </figcaption>
-      <a href="" ng-bind-html="gal">
+
+      <a  ng-bind-html="gal.description">
 
       </a>
     </figure>
