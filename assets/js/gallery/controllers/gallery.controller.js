@@ -10,7 +10,7 @@ define([
 
     var dat = DataService.data(this).then(function(data){
       gallery.dat = data;
-        console.log(data);
+      console.log(gallery);
     })
 
     var list = DataService.list(this).then(function(data){
@@ -34,12 +34,9 @@ define([
         });
 
       });
-      
-      
+
       gallery.postsArr = postsArr;
       gallery.posts = postHtmlArr;
-      console.log (gallery.postsArr);
-      console.log (gallery.dat);
 
 
 //!~!~!~rooGalleryImage --> removes <p> wrapper from before and after images in posts.
@@ -48,7 +45,6 @@ define([
 
 
     });
-//    $scope.data = this;
 
     $scope.GalleryController = this;
     return $scope.CompanyController ;
