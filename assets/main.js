@@ -21,7 +21,7 @@
   };
 
   require.config({
-    baseUrl: '/nerd/assets/'
+      baseUrl: '/nerd/assets/'
     , paths : {
 
 //        Frameworks
@@ -34,7 +34,7 @@
       , 'ui_router': 'lib/angular-ui-router/release/angular-ui-router'
       , 'mocks': 'lib/angular-mocks/angular-mocks'
       , 'transform' : 'lib/xml-to-json/jquery.xml2json'
-
+      , 'traceur' : 'lib/traceur-runtime/traceur-runtime'
 //    Initialization
 //    -----------------------
       ,  init : init
@@ -74,8 +74,9 @@
   requirejs([
       'angular'
     , 'jquery'
+    , 'init/apps_bootstrap'
     ]
-    , function(angular, jquery) {
-    }
-  );
+    , function(angular, jquery, apps_bootstrap) {
+
+    });
 })();
