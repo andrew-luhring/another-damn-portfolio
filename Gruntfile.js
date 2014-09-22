@@ -60,64 +60,56 @@ module.exports = function(grunt) {
     //
     //                                          style directories
     //
-    , STYLE_DIR = ASSETS_DIR                      + "css/"
-    , LESS_DIR = ASSETS_DIR                        + "less/"
-    , STYLEGUIDE_DIR = ASSETS_DIR          + "styleguide/"
-    , BUILD_DIR = ASSETS_DIR                     + "build/"
-    , ANGULAR_DIR = ASSETS_DIR              + "ang/"
-    , FAB_DIR = "/Users/yaxl047/Sites/fabory/bin/custom/fabory/faborystorefront/web/webroot/_ui/desktop/common/build/"
-    , FAB_DIR_root = "/Users/yaxl047/Sites/fabory/bin/custom/fabory/faborystorefront/web/webroot/_ui/desktop/common/"
+    , STYLE_DIR = ASSETS_DIR      + "css/"
+    , LESS_DIR  = ASSETS_DIR      + "less/"
+    , BUILD_DIR = ASSETS_DIR      + "build/"
 
     //============================================
     //
     //                                              style files
     //
-    , cssF = STYLE_DIR                                    + "style.css"
-    , lessF = LESS_DIR                                     + "style.less"
-    , guideF = STYLEGUIDE_DIR                    + "public/style.css"
-    , buildF = BUILD_DIR                                + "css/style.css"
+    , cssF      = STYLE_DIR       + "style.css"
+    , lessF     = LESS_DIR        + "style.less"
 
     //===========================================
     //
     //                                            js  directories
     //
-    , JSDOC_DIR = ASSETS_DIR + "doc/"
-    , JS_DIR = ASSETS_DIR + 'js/'
-    , TEST_DIR = 'tests/'
+    , JSDOC_DIR = ASSETS_DIR      + "jsdoc/"
+    , JS_DIR    = ASSETS_DIR      + 'js/'
+    , TEST_DIR  =                   'tests/'
 
     //===========================================
     //
     //                                                  js files
     //
     , frontendF = [
-        ASSETS_DIR + 'main.js'
-      , JS_DIR        + 'common/*.js'
-      , JS_DIR        + 'init/*.js'
-      , JS_DIR        + 'gallery/*.js'
-      , JS_DIR        + 'gallery/controllers/*.js'
-      , JS_DIR        + 'gallery/directives/*.js'
+        ASSETS_DIR                + 'main.js'
+      , JS_DIR                    + 'common/*.js'
+      , JS_DIR                    + 'init/*.js'
+      , JS_DIR                    + 'gallery/*.js'
+      , JS_DIR                    + 'gallery/controllers/*.js'
+      , JS_DIR                    + 'gallery/directives/*.js'
 
     //===========================================
     //
     //                                                    tests
     //
-      , TEST_DIR   + 'test-main'
-      , TEST_DIR   + 'unit/**/*.js'
-      , TEST_DIR   + 'unit/**/**/*.js'
-      , TEST_DIR    + 'e2e/*.js'
-      , '!tests/unit/examples/**'
-    ]
+      , TEST_DIR                  + 'test-main'
+      , TEST_DIR                  + 'unit/**/*.js'
+      , TEST_DIR                  + 'unit/**/**/*.js'
+      , TEST_DIR                  + 'e2e/*.js'
+      ]
     , backendF = [
-       './Gruntfile.js'
+        './Gruntfile.js'
       , './config/*.js'
-    ]
+      ]
 
     //===========================================
     //
     //                                                  commands
     //
     , lesscmd = 'node ./node_modules/.bin/lessc --source-map-map-inline --source-map --source-map-rootpath=../less/ ' + lessF + ' ' + cssF
-    , styleguidelesscmd = 'node ./node_modules/.bin/lessc  --source-map-map-inline --source-map --source-map-rootpath=../less/ ' + lessF + ' ' + guideF
     , gruntcmd = './node node_modules/.bin/grunt'
 
     //============================================
@@ -156,14 +148,8 @@ module.exports = function(grunt) {
     //                                                         exec
     //
       , exec: {
-            hack                    : 'cp config/html2jsHack.js node_modules/karma-ng-html2js-preprocessor/lib/html2js.js'
+            hack                    : 'cp config/html2jsHack.js node_modules/karma-ng-html2js-preprocessor/lib/html2js.js ; '
         ,   push                    : 'cp -r ' + STYLE_DIR + '* ' + BUILD_DIR + 'css/ ; cp -r '+ JS_DIR + '* ' + BUILD_DIR + 'js/ ; cp ' + ASSETS_DIR + 'main.js ' + BUILD_DIR + 'main.js ;'
-        ,   fab_main             : 'cp ' + ASSETS_DIR + 'main.js '       +    FAB_DIR  + 'main.js ; '
-        ,   fab_js                  : ' cp -r '+ JS_DIR + '* '                       +    FAB_DIR  + 'js/ ; '
-        ,   fab_css                : ' cp -r ' + STYLE_DIR + '* '               +    FAB_DIR     + 'css/ ; '
-        ,   fab_tests             : ' cp -r '+ TEST_DIR + '* '                   +   FAB_DIR_root  + 'tests/ ; '
-        ,   fab_ang               : ' cp -r '+ ANGULAR_DIR + '* '         +    FAB_DIR_root  + 'ang/ ; '
-        ,   fab_less               : ' cp -r   public/less/ '                         +   FAB_DIR_root  + 'less/ ; '
         ,   updateDriver       : 'webdriver-manager update'
         }
 
@@ -197,14 +183,6 @@ module.exports = function(grunt) {
             stdout: true
           }
           , command: [lesscmd, gruntcmd + ' karma:unit:start watch -v'].join('&')
-        }
-        , styleguide: {
-          command : styleguidelesscmd
-          , options: {
-                stdout: true
-              , stderr: true
-              , failOnError: true
-            }
         }
       }
 
@@ -251,7 +229,7 @@ module.exports = function(grunt) {
       //
       //                                                     clean
       //
-      , clean: [STYLEGUIDE_DIR, JSDOC_DIR]
+      , clean: [JSDOC_DIR]
 
       //============================================
       //
@@ -305,8 +283,7 @@ module.exports = function(grunt) {
       }
     };
   config["less"]["dist"]["files"][cssF] = lessF;
-  config["less"]["build"]["files"][buildF] = lessF;
-  config["less"]["guide"]["files"][guideF] = lessF;
+
   grunt.initConfig(config);
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-exec');
@@ -329,12 +306,6 @@ module.exports = function(grunt) {
   //
   //===========================================
   //
-  grunt.registerTask(                 "only_karma",            "only run karma" , function() {
-      grunt.task.run('karma:solo:start');
-    });
-  grunt.registerTask(                 "style",                         "generate styleguide", function() {
-    grunt.task.run('shell:kss', 'shell:styleguide');
-  });
   grunt.registerTask(                 "less",                          "run less once.", function() {
     grunt.task.run('shell:less' );
   });
@@ -373,7 +344,7 @@ module.exports = function(grunt) {
   grunt.registerTask(                 "build",                       "removes old documentation + styleguide, generates jsdoc documentation, generates styleguide, replaces the default html2js plugin file with one that supports require.js", [
         'clean'
       , 'jsdoc'
-      , 'style'
+      , 'shell:less'
       , 'exec:hack'
     ]);
   grunt.registerTask(                 "_watch",                    "run the actual watch command" , function() {

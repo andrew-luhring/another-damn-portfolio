@@ -28,8 +28,6 @@ define([
             return $q.reject(response);
         })
     }
-
-
     this.list = function(list){
 
       return $http.get("/nerd/rss")
