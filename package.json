@@ -18,7 +18,8 @@
     "jsdoc": "^3.3.0-alpha9",
     "less": "^1.7.0",
     "node-dev": "^2.3.0",
-    "phantomjs": "^1.9.7-14"
+    "phantomjs": "^1.9.7-14",
+    "traceur": "0.0.65"
   },
   "devDependencies": {
     "browserstack-webdriver": "^2.41.1",

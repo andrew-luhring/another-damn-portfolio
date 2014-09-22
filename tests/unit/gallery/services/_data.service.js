@@ -15,25 +15,44 @@ define([
     this.addMatchers(matchers);
   });
   describe("\n================\n\nDataService", function () {
-    var mock, DataService, getCurrentView, registerCurrentView, $scope, $injector;
+    var mock
+      , DataService
+      , getCurrentView
+      , registerCurrentView
+      , $scope
+      , $rootScope
+      , $injector
+      , deferred;
     beforeEach(function () {
       module('gallery');
-      inject(function (_$rootScope_, _$injector_, $templateCache) {
+      inject(function (_$rootScope_, _$injector_, $templateCache, $q) {
+        $rootScope = _$rootScope_;
         $scope = _$rootScope_.$new();
         $injector = _$injector_;
-        DataService = $injector.get('DataService');
+        DataService = $injector. get('DataService');
+        deferred = $q.defer();
+
+        spyOn(DataService, 'list').andReturn(deferred.promise)
       });
     });
     it("exists", function () {
       expect(DataService).toBeDefined();
     });
-    xdescribe("and has a list method", function () {
+    describe("and has a list method", function () {
       it("which is an array of DataObjects", function () {
-        expect(DataService.list()).toBeTypeOf('object');
-        expect(DataService.list()).toBeInstanceOf(Array);
+        expect(DataService.list()).toBeInstanceOf(Object);
       });
       it("that is not empty", function(){
-        expect(DataService.list().length).toBeGreaterThan(1);
+        var obj = {}
+          , result = DataService.list(obj);
+
+        result.then(function(data){
+          console.log (obj);
+          expect(data).toExist();
+
+        })
+        deferred.resolve({data: { nested : true}});
+        $scope.$digest();
       });
     });
     xdescribe("and has a dataObject constructor", function(){

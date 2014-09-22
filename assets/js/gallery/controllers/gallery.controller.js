@@ -30,7 +30,7 @@ define([
 
         _.each(item['item'], function(j){
           postsArr.push(j);
-          postHtmlArr.push(j.description)
+          postHtmlArr.push(j.description);
         });
 
       });
