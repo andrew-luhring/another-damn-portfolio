@@ -8,10 +8,12 @@ define([
     var gallery = this;
     this.meta = $scope;
 
-    var dat = DataService.data(this).then(function(data){
-      gallery.dat = data;
-      console.log(gallery);
-    })
+    var dat = DataService.
+      data(this).
+      then(function(data){
+        gallery.dat = data;
+        console.log(gallery);
+      });
 
     var list = DataService.list(this).then(function(data){
       var _data = data
@@ -49,5 +51,4 @@ define([
     $scope.GalleryController = this;
     return $scope.CompanyController ;
   }];
-
 });

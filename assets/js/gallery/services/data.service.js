@@ -16,7 +16,7 @@ define([
             , tags: response.data.db[0].data.tags
             , posts_tags: response.data.db[0].data.posts_tags
             }
-            list.blah = obj;
+            list.data = obj;
             return obj;
           } else {
 
@@ -34,7 +34,7 @@ define([
         .then(function(response){
           if(typeof response === 'object' && response instanceof Object){
             var data = _$.xml2json(response.data);
-            list.data  = data;
+            list.listData  = data;
             return data;
           } else{
             $log.error('fail');
