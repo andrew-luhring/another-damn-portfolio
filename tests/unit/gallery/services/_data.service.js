@@ -1,3 +1,5 @@
+/*jshint expr: true*/
+/*global spyOn: true*/
 define([
     'galS/data.service'
   , 'com/matchers'
@@ -58,27 +60,35 @@ define([
       expect(DataService).toBeDefined();
     });
     describe("and has a list method", function () {
+
       beforeEach(function(){
         spyOn(DataService, 'list').andReturn(deferred.promise);
-      })
+      });
+
+
       it("which returns a promise object", function () {
         expect(DataService.list()).toBeInstanceOf(Object);
       });
+
+
       it("that is not empty", function(){
         var obj = {}
           , result = DataService.list(obj);
+
         result.then(function(data){
           expect(data).toExist();
         });
+
         deferred.resolve({data: { nested : true}});
         $scope.$digest();
+
       });
 
 
       it("that contains data", function(){
         $httpBackend.expectGET('/nerd/content/images/2014/Sep/data.json');
         var obj = $scope
-        , result = DataService.data(obj)
+        , result = DataService.data(obj);
         $httpBackend.flush();
 
         expect($scope.data).toBeInstanceOf(Object);
