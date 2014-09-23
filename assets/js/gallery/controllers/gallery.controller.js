@@ -6,47 +6,35 @@ define([
 
   return ['$scope', 'DataService', '$sanitize', function($scope, DataService, $sanitize){
     var gallery = this;
-    this.meta = $scope;
+    gallery.meta = $scope;
 
-    var dat = DataService.
-      data(this).
-      then(function(data){
-        gallery.dat = data;
-        console.log(gallery);
-      });
+    var data = DataService.data(this);
 
-    var list = DataService.list(this).then(function(data){
+
+    function generatePostsForList(data){
       var _data = data
         , _posts = data.channel.item
         , postsArr= []
-        , postHtmlArr = []
-        , classArr = []
-        , containerArr = []
-        , post
-        , arr = []
-        , test;
-      
-      gallery.data = _data;
+        , postHtmlArr = [];
 
-      _.each(data, function(item){
+      gallery.listData = _data;
 
+      _.each(gallery.listData , function(item){
         _.each(item['item'], function(j){
           postsArr.push(j);
           postHtmlArr.push(j.description);
         });
-
       });
 
-      gallery.postsArr = postsArr;
-      gallery.posts = postHtmlArr;
+      gallery.listPostsArr = postsArr;
+      gallery.listPosts = postHtmlArr;
 
+    }
+    var list = DataService.list(this).
+      then(function(data){
+        generatePostsForList(data);
+      });
 
-//!~!~!~rooGalleryImage --> removes <p> wrapper from before and after images in posts.
-// todo use that^ to make a regex to remove the parent p element via regular expression
-      // figure out how to test that's safety.
-
-
-    });
 
     $scope.GalleryController = this;
     return $scope.CompanyController ;
