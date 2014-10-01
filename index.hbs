@@ -12,46 +12,27 @@
 </header>
 
 {{! The main content area on the homepage }}
+<div ng-controller="GalleryController as gallery">
+  <article ng-repeat="gal in gallery.strArr">
+    <figure class="post-content">
+      <figcaption class="gallery-caption">
+      </figcaption>
+      <img ng-src="[[gal]]" />
+    </figure>
+  </article>
+
+</div>
 <main class="content" role="main" ng-controller="GalleryController as gallery">
-  <article ng-repeat="gal in gallery.postsArr">
+  <article ng-repeat="gal in gallery.listPostsArr">
     <figure class="post-content">
       <figcaption class="gallery-caption">
         {{{title}}}
       </figcaption>
-
-      <a  ng-bind-html="gal.description">
-
+      <a ng-bind-html="gal.description">
       </a>
     </figure>
 
   </article>
-
-  {{#foreach posts}}
-    {{#has tag="gallery"}}
-    <article class="{{post_class}}  {{tags autolink="false"}}">
-      <figure class="post-content">
-        <figcaption class="gallery-caption">
-          {{{title}}}
-        </figcaption>
-        <a href="{{url}}">
-
-        </a>
-      </figure>
-    </article>
-    {{/has}}
-    {{#unless tags}}
-      <article class="{{post_class}}  {{tags autolink="false"}}">
-        <h2 class="post-title">
-          <a href="{{url}}">{{{title}}}</a>
-        </h2>
-        <section class="post-content">
-          {{content}}
-        </section>
-      </article>
-    {{/unless}}
-  {{/foreach}}
-  {{!pagination}}
-  
   
 
 </main>
