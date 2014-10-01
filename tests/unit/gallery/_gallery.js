@@ -1,4 +1,4 @@
-/*jshint expr: true*/
+/*jshint expr: true*/1
 define([
    'angular'
   , 'init/apps_init'
@@ -15,7 +15,6 @@ describe("\n================\n\ngallery", function(){
   , gallery = apps_init.gallery
   , inject = mocks.inject
   , module = mocks.module
-  , $scope
   , $injector
   , $compile
   , $controller
@@ -49,7 +48,7 @@ describe("\n================\n\ngallery", function(){
   });
   it("has a DataService",function (){
     expect(DataService).toExist();
-  })
+  });
 
 });
 });
