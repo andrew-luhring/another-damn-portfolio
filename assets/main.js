@@ -29,6 +29,7 @@
       , 'angular.animate' : 'lib/angular-animate/angular-animate'
       , 'ngSanitize' : 'lib/angular-sanitize/angular-sanitize'
       , 'lodash': 'lib/lodash/dist/lodash.compat'
+      , 'esapi' : 'lib/esapi'
       , 'jquery': 'lib/jquery/dist/jquery'
       , 'mixitup' : 'lib/mixitup/src/jquery.mixitup'
       , 'ui_router': 'lib/angular-ui-router/release/angular-ui-router'

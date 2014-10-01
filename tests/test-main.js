@@ -40,6 +40,8 @@
       , 'mocks': 'lib/angular-mocks/angular-mocks'
       , 'transform' : 'lib/xml-to-json/jquery.xml2json'
       , 'traceur' : 'lib/traceur-runtime/traceur-runtime'
+      , 'esapi' : 'lib/esapi'
+
 //    Initialization
 //    -----------------------
       ,  init : init
