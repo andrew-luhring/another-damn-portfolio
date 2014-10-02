@@ -4,38 +4,53 @@ define([
   ]  , function(_){
   "use strict";
 
-  return ['$scope', 'DataService', '$sanitize', function($scope, DataService, $sanitize){
+  return ['$scope', 'DataService', '$sanitize', '$window', '$log', function($scope, DataService, $sanitize, $window, $log){
     var gallery = this;
     gallery.meta = $scope;
     
     var data = DataService.data(this);
     data.then(function(obj){
       var strArr = [];
+      var altArr = [];
+      var imgArr = [];
 
       function returnUseableString(rex, str, arr ){
-
-      }
-
-
-      _.each(obj.postsArr, function(post){
-        var _post = post;
-        var str = post.markdown.toString();
-        var img = /'img':'[\/(\w)(\_\-)']*(\.png)'/ig;
-        var result = img.exec(str)
+        
+        var result = rex.exec(str)
         if(result){
           var substr = result[0]
           var path = substr.split(":")
           path = path[1];
           path = path.split("'");
           path = path[1];
-          strArr.push(path);
+          arr.push(path);
+          return path;
+        } else {
+          return null;
         }
-      })
-      window.strArr = strArr;
-      gallery.strArr = strArr;
+      }
+      _.each(obj.postsArr, function(post){
+        let _post = post
+          , str = post.markdown.toString()
+          , img = /'img':'[\/(\w)(\_\-)']*(\.png)'/ig
+          , alt = /'alt':'(.)*'/ig
+          , url = /'url':'(.)*'/ig
+          , final = {};
+        
 
+        final.img = returnUseableString(img, str, strArr);
+        final.alt = returnUseableString(alt, str, altArr);
+        final.url = returnUseableString(url, str, altArr);
+        
+        if(final.img && final.alt && final.url){
+          imgArr.push(final);
+        }
+      });
+
+      gallery.imgArr = imgArr;
+      gallery.strArr = strArr;
+      gallery.altArr = altArr;
     });
-    
 
 
     function generatePostsForList(data){

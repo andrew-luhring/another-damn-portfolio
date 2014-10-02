@@ -56,12 +56,12 @@ define([
 
 
     this.data = function(obj){
-        return $http.get("/nerd/content/images/2014/Sep/data.json").
+        return $http.get("/nerd/api/public/posts/").
         then(function(response){
 
           if(typeof response=== 'object' && response instanceof Object) {
 
-            var data = response.data.db[0].data;
+            var data = response.data;
             obj.postsArr      = data.posts;
             obj.tagsArr       = data.tags;
             obj.posts_tagsArr = data.posts_tags;
