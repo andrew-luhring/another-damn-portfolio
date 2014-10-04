@@ -10,7 +10,6 @@ define([
 
 
   return ['$http','$q', '$log' ,function($http, $q, $log){
-window.$log = $log;
     /**
      *
      * @param {object} - response object to check
