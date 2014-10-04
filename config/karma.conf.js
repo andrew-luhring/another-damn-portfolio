@@ -27,7 +27,11 @@ module.exports = function (config) {
   var karmaObj = {
     basePath : '../',
 
-    frameworks : ['jasmine', 'requirejs'],
+    frameworks : [
+      'jasmine'
+    , 'requirejs'
+//    , 'traceur'
+    ],
     files : [
       CSS_F,
       {included : false,  pattern : GLOB.lib_recursiver},
@@ -44,13 +48,21 @@ module.exports = function (config) {
       JS_DIR + '_traceur-spike.js',
       MAIN_F
     ],
-//    preprocessors : {
+    preprocessors : {
+
 //      './assets/js/*.js' : ['coverage'],
 //      './assets/js/**/*.js' : ['coverage'],
 //      './assets/js/**/**/*.js' : ['coverage']
-//    },
+    },
 //    ngHtml2JsPreprocessor: {
 //      enableRequireJs: true,
+//    },
+
+//    traceurPreprocessor: {
+//      options: {
+//        sourcemaps: true,
+//        modules: 'amd'
+//      }
 //    },
     reporters: [
       'progress'
@@ -60,6 +72,9 @@ module.exports = function (config) {
       , 'growl'
       ,'coverage'
     ],
+
+
+
     coverageReporter : {
       type : 'html',
       dir : TEST_DIR + 'results/coverage/'
@@ -71,12 +86,14 @@ module.exports = function (config) {
     logLevel : config.LOG_INFO,
 //    logLevel : config.LOB_DEBUG,
     autoWatch : true,
-    browsers : ['PhantomJS']
-//    browsers : ['Chrome']
+//    browsers : ['PhantomJS']
+    browsers : ['Chrome']
   };
 
 
-
+//  karmaObj.preprocessors[GLOB.js] = ['traceur'];
+//  karmaObj.preprocessors[GLOB.js_recursive] = ['traceur'];
+//  karmaObj.preprocessors[GLOB.js_recursiver] = ['traceur'];
 
   config.set(karmaObj);
 

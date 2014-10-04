@@ -1,4 +1,4 @@
-/*jshint expr: true*/1
+/*jshint expr: true*/
 define([
    'angular'
   , 'init/apps_init'

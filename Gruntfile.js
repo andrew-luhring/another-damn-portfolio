@@ -90,6 +90,7 @@ module.exports = function(grunt) {
       , JS_DIR                    + 'gallery/*.js'
       , JS_DIR                    + 'gallery/controllers/*.js'
       , JS_DIR                    + 'gallery/directives/*.js'
+      , JS_DIR                    + 'gallery/services/*.js'
 
     //===========================================
     //
@@ -383,7 +384,7 @@ module.exports = function(grunt) {
         }
         , livereload : {
              options: { livereload: true }
-          ,  files : [cssF]
+          ,  files : [ cssF, frontendF]
         }
       };
       grunt.task.run('watch');

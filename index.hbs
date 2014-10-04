@@ -11,27 +11,21 @@
   </div>
 </header>
 
-{{! The main content area on the homepage }}
-<div ng-controller="GalleryController as gallery">
-  <article ng-repeat="gal in gallery.strArr">
-    <figure class="post-content">
-      <figcaption class="gallery-caption">
-      </figcaption>
-      <img ng-src="[[gal]]" />
-    </figure>
-  </article>
-
-</div>
 <main class="content" role="main" ng-controller="GalleryController as gallery">
-  <article ng-repeat="gal in gallery.listPostsArr">
-    <figure class="post-content">
+  <article ng-repeat="gal in gallery.imgArr">
+    <figure class="post-content" ng-class="[[gal.classes]]">
       <figcaption class="gallery-caption">
-        {{{title}}}
+
       </figcaption>
-      <a ng-bind-html="gal.description">
+      <a href="[[gal.url]]" >
+
+        <img
+          ng-src="[[gal.img]]"
+          alt="[[gal.alt]]"
+        />
+
       </a>
     </figure>
-
   </article>
   
 

@@ -4,77 +4,90 @@ define([
   , 'esapi'
   , 'transform'
 ], function(_, _$, esapi){
-  
-  var obj = function(){
-    return {
-      esapi : function(){
-        return esapi;
-      }()
-    };
+  "use strict";
 
-  }();
-  //console.log (obj);
-  
-  var derp = function(){
-    return {
-      esapi : function(){
-        return esapi;
-      }()
-    };
-  }();
-
-  //console.log (derp);
-
-//  console.log (derp.test === obj.test);
-//
-
-  return ['$http','$q', '$log' ,function($http, $q, $log){
 
 
 
-//    var img = /'img':'[\/(\w)(\_\-)']*(\.png)'/ig;
-//    var str = derp.toString()
-//    var result = img.exec(str)
-//    var substr = result[0]
-//    var path = substr.split(":")
-//    path = path[1];
-//    function transform(arr, container){
-//      var img = /'img':'[\/(\w)(\_\-)']*(\.png)'/ig;
-//
-//      _.each(arr, function(i){
-//        var md = i.markdown;
-//        var result = img.test(md);
-//
-//        if(result){
-//          var src = imgSrc.test(md);
-//        }
-//
-//      })
-//      return container;
-//    }
+  return ['$http','$q', '$log' ,function($http, $q, $log){
+window.$log = $log;
+    /**
+     *
+     * @param {object} - response object to check
+     * @returns {*}
+     */
+    function isValidResponse(resp){
+      if(typeof resp === 'object' && resp instanceof Object) {
 
+        if(_.has(resp, 'status')){
+          if(resp.status === 200){
+            return true;
+          }
+        }
+        $log.warn('bad status');
+        $log.error(resp);
+        return $q.reject (resp);
+      } else {
+        $log.error('bad response');
+        $log.error(resp);
+        return $q.reject (resp);
+      }
+    }
+    function getTags(obj){
+      return $http.get("/nerd/api/public/tags/").
+        then(function(response){
+          if(isValidResponse(response)){
+            var tags = [];
+            _.each (response.data.tags, function (tag) {
+              tags.push ({
+                id: tag.id
+              , name: tag.slug
+              });
+            });
+            obj.tags = tags;
+
+          }
+        }, function(err){
+          return isValidResponse(err);
+        });
+    }
+    function getPosts(obj){
+        return $http.get("/nerd/api/public/posts/").
+        then(function(response){
+            if(isValidResponse(response)){
+              var data = response.data;
+              obj.postsArr = data.posts;
+              return obj;
+            }
+        }, function(err){
+            return isValidResponse(err);
+        });
+    }
+    function assignClasses(obj){
+      _.each(obj.postsArr, function(post){
+
+        var tagClasses = [];
+        _.each(post.tags, function(tagNum){
+         var tag = _.find(obj.tags, {'id':tagNum});
+          tagClasses.push(tag.name);
+        });
+        post.tagClasses = tagClasses;
+      });
+      return obj;
+    }
 
 
     this.data = function(obj){
-        return $http.get("/nerd/api/public/posts/").
-        then(function(response){
 
-          if(typeof response=== 'object' && response instanceof Object) {
+      return getPosts(obj).
+        then(function(val){
 
-            var data = response.data;
-            obj.postsArr      = data.posts;
-            obj.tagsArr       = data.tags;
-            obj.posts_tagsArr = data.posts_tags;
+          return getTags(obj).
+            then(function(){
+              assignClasses(obj);
+              return val;
+            });
 
-            return obj;
-          } else {
-
-            $log.error('fail');
-            return $q.reject (response);
-          }
-        }, function(){
-            $log.error ('error');
-            return $q.reject(response);
         });
     };
 
@@ -92,35 +105,19 @@ define([
         }, function(response){
           $log.error ('error');
           return $q.reject(response.data);
-        })
-    }
-  }]
+        });
+    };
+  }];
 });
 
 
 
 
 
-
-
-////
-//var img = /'img':'[\/(\w)(\_\-)']*(\.png)'/ig;
-//var str = derp.toString()
-//var result = img.exec(str)
-//var substr = result[0]
-//var path = substr.split(":")
-//path = path[1];
-//function transform(arr, container){
-//  var img = /'img':'[\/(\w)(\_\-)']*(\.png)'/ig;
-//
-//  _.each(arr, function(i){
-//    var md = i.markdown;
-//    var result = img.test(md);
-//
-//    if(result){
-//      var src = imgSrc.test(md);
-//    }
-//
-//  })
-//  return container;
-//}
+//var obj = function(){
+//  return {
+//    esapi : function(){
+//      return esapi;
+//    }()
+//  };
+//}();
