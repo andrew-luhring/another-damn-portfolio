@@ -86,6 +86,7 @@ module.exports = function(grunt) {
     , frontendF = [
         ASSETS_DIR                + 'main.js'
       , JS_DIR                    + 'common/*.js'
+      , JS_DIR                    + 'common/**/*.js'
       , JS_DIR                    + 'init/*.js'
       , JS_DIR                    + 'gallery/*.js'
       , JS_DIR                    + 'gallery/controllers/*.js'
@@ -363,7 +364,7 @@ module.exports = function(grunt) {
           ]
           , tasks: ['jshint:frontend']
           , options: {
-            spawn: true
+              spawn: true
             , atBegin: true
           }
         }
@@ -384,7 +385,7 @@ module.exports = function(grunt) {
         }
         , livereload : {
              options: { livereload: true }
-          ,  files : [ cssF, frontendF]
+          ,  files : [ cssF, frontendF, 'index.hbs']
         }
       };
       grunt.task.run('watch');
