@@ -3,10 +3,17 @@ define(['lodash'], function(_) {
   return ['$location' , '$anchorScroll', function($location, $anchorScroll){
     return{
       restrict: "EA"
-      , trandsclude: true
+      , transclude: false
       , scope: {}
       , template: ""
-      , link: function (scope, elem, attr) {}
+      , link: function (scope, elem, attr) {
+        elem.click(function(e){
+          console.log (e);
+
+          e.preventDefault();
+          console.log("yo");
+        });
+      }
     };
   }];
 });
