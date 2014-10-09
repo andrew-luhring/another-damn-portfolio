@@ -11,23 +11,29 @@
   </div>
 </header>
 
-<main class="content" role="main" ng-controller="GalleryController as gallery">
-  <article ng-repeat="gal in gallery.imgArr">
-    <figure class="post-content" ng-class="[[gal.classes]]">
-      <figcaption class="gallery-caption">
-
-      </figcaption>
-      <a href="[[gal.url]]" >
-
-        <img
-          ng-src="[[gal.img]]"
-          alt="[[gal.alt]]"
-        />
-
-      </a>
-    </figure>
-  </article>
-  
-
+<main id="main" class="content column" role="main" ng-controller="GalleryController as gallery">
+  <div ng-repeat="row in gallery.rows" class="content row">
+    <article ng-repeat="gal in row"  class="post" ng-class="[[gal.classes]]" >
+      <figure class="post-content" >
+        <figcaption class="gallery-caption">[[gal.alt]]</figcaption>
+        <a href="[[gal.url]]" >
+          <img
+            ng-src="[[gal.img]]"
+            alt="[[gal.alt]]"
+            />
+        </a>
+      </figure>
+    </article>
+  </div>
 </main>
+
+
+
+<aside class="hidden">
+  <label><div>Play Mode</div>
+    <div class="bar">
+      <button class="slider"></button>
+    </div>
+  </label>
+</aside>
 
