@@ -25,6 +25,7 @@ body {
   color: #222;
   text-shadow: none;
 }
+
 //
   div
 , section
@@ -276,9 +277,6 @@ table.plain tbody > tr:nth-child(odd) > th {
   display: block;
   margin: 1.6em 0;
 }
-/* When a video is inside the fitvids wrapper
-, drop the margin on the iframe
-, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
   margin: 0;
 }
@@ -312,3 +310,66 @@ table.plain tbody > tr:nth-child(odd) > th {
   vertical-align: middle;
 }
 
+
+
+
+
+.bar {
+  background: black;
+  border: 5px solid black;
+  height: 100px;
+  margin: auto;
+  position: relative;
+  transition: background 0.5s;
+  width: 250px;
+  //
+    &:before
+  , &:after{
+      font-family: "GeoSansLight";
+      display: block;
+      position:absolute;
+      top:35%;
+      transition: opacity 0.5s 0.25s;
+  }
+  //
+  &:after{
+    color: white;
+    content:"light";
+    opacity:1;
+    right: 10px;
+  }
+  &:before{
+    content:"dark";
+    color: black;
+    left: 10px;
+    opacity:0
+  }
+  &:hover{
+    background: white;
+    &:after{
+      opacity:0;
+    }
+    &:before{
+      opacity:1;
+    }
+  }
+}
+
+.slider{
+  background: black;
+  border:5px solid white;
+  border-radius: 50%;
+  height:90px;
+  left:0;
+  position: absolute;
+  top:0;
+  transition: left 1s;
+  width: 90px;
+}
+
+.bar:hover .slider{
+  background:white;
+  border-color:black;
+  left:150px;
+  transition: left 1s, background .5s, border-color .5s;
+}
