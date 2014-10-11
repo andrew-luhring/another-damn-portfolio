@@ -3,7 +3,6 @@ define([
   , 'galS/data.service'
   ]  , function(_, jquery){
   "use strict";
-
   /**
    *
    * @param rex - a regular expression

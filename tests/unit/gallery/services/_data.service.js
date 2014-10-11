@@ -96,7 +96,7 @@ define([
           DataService.data($scope).then(function(data){
             var posts = $scope.postsArr;
             expect(posts).toBeInstanceOf(Object);
-            expect(posts).toBeInstanceOf(Array)
+            expect(posts).toBeInstanceOf(Array);
           });
         });
         it("of posts", function(){
@@ -125,15 +125,15 @@ define([
 
       it("and also assigns tags to the object passed into it", function(){
         DataService.data($scope).then(function(data){
-          var tags = $scope.tags
+          var tags = $scope.tags;
           expect(tags).toBeTruthy();
         });
       });
       describe("and tags ", function(){
         it("is an Array", function(){
           DataService.data($scope).then(function(data){
-            var tags = $scope.tags
-            expect(tags).toBeInstanceOf(Array)
+            var tags = $scope.tags;
+            expect(tags).toBeInstanceOf(Array);
           });
         });
         it("of tags", function(){
