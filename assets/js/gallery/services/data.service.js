@@ -6,7 +6,13 @@ define([
 ], function(_, _$, esapi){
   "use strict";
 
-  return ['$http','$q', '$log', 'AjaxService', function($http, $q, $log, AjaxService ){
+  return [
+      '$http'
+    , '$q'
+    , '$log'
+    , 'AjaxService'
+    , function($http, $q, $log, AjaxService ){
+
 
     /**
      * takes url of api, makes request, checks response, returns response or throws error.

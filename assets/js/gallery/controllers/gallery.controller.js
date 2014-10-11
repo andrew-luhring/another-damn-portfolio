@@ -79,7 +79,7 @@ define([
         , imgArr = []
         , urlArr = [];
       _.each(gallery.postsArr, function(post){
-        let str = post.markdown.toString()
+        var str = post.markdown.toString()
           , img = /'img':'[\/(\w)(\_\-)']*(\.(gif|png))'/ig
           , alt = /'alt':'(.)*'/ig
           , url = /'url':'(.)*'/ig

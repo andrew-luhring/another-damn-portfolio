@@ -11,7 +11,7 @@
   for (var file in window.__karma__.files) {
     if (window.__karma__.files.hasOwnProperty(file)) {
       if (regex.test(file)  || recursive.test(file) && not.test(file) ) {
-//    console.log('\n******************************' + 'testing: ' + file + '\n******************************' );
+//        console.log('\n******************************' + 'testing: ' + file + '\n******************************' );
 //      tests.push (file);
         tests.unshift(file);
       }
@@ -20,6 +20,7 @@
 
   var com= 'js/common'
     , init= 'js/init'
+    , testmocks= '../tests/unit/gallery/mocks'
     , gal = 'js/gallery'
     , galD = gal + '/directives'
     , galC = gal + '/controllers'
@@ -54,6 +55,12 @@
       , galC : galC
       , galD : galD
       , galS : galS
+      , testmocks: testmocks
+
+//    Mocks
+//    -----------------------
+
+
     }
     , shim: {
         'angular' : {'exports' : 'angular'}

@@ -11,6 +11,7 @@ define([
     , testDiv = utility.testDiv
     , silent = true;
 
+
   /**
    *
    * @param {selector} - if it is not a jquery element, it becomes one and can be accessed via the obj property.

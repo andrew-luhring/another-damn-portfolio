@@ -26,7 +26,6 @@ module.exports = function (config) {
 
   var karmaObj = {
     basePath : '../',
-
     frameworks : [
       'jasmine'
     , 'requirejs'
@@ -48,12 +47,7 @@ module.exports = function (config) {
       JS_DIR + '_traceur-spike.js',
       MAIN_F
     ],
-    preprocessors : {
 
-//      './assets/js/*.js' : ['coverage'],
-//      './assets/js/**/*.js' : ['coverage'],
-//      './assets/js/**/**/*.js' : ['coverage']
-    },
 //    ngHtml2JsPreprocessor: {
 //      enableRequireJs: true,
 //    },
@@ -70,14 +64,30 @@ module.exports = function (config) {
 //      , 'nyan'
       /*'mocha'*/
       , 'growl'
-      ,'coverage'
+      , 'coverage'
     ],
+    preprocessors : {
+      './assets/main.js' : ['coverage']
+    , './assets/js/init/apps_init.js' : ['coverage']
+    , './assets/js/gallery/gallery.js' : ['coverage']
+    , './assets/js/gallery/services/*.js'  : ['coverage']
+    , './assets/js/gallery/controllers/*.js'  : ['coverage']
+    , './assets/js/gallery/directives/*.js'  : ['coverage']
+    , './assets/js/common/services/*.js'  : ['coverage']
+    , './assets/js/init/apps_bootstrap.js' : ['coverage']
 
+    },
 
 
     coverageReporter : {
       type : 'html',
-      dir : TEST_DIR + 'results/coverage/'
+      dir : TEST_DIR + 'results/coverage/',
+      subdir: function(browser) {
+        // normalization process to keep a consistent browser name accross different
+        // OS
+        return browser.toLowerCase().split(/[ /-]/)[0];
+      }
+
     },
     port : 9876,
     colors : true,
@@ -87,7 +97,8 @@ module.exports = function (config) {
 //    logLevel : config.LOB_DEBUG,
     autoWatch : true,
 //    browsers : ['PhantomJS']
-    browsers : ['Chrome']
+    browsers : ['PhantomJS', 'Chrome', 'Firefox', 'Safari']
+//    browsers : ['Chrome']
   };
 
 
