@@ -1,8 +1,11 @@
 define([
     'lodash'
   , 'galS/data.service'
-  ]  , function(_, jquery){
+  , 'comS/private.tester'
+  ]  , function(_, jquery, Tester){
   "use strict";
+
+
   /**
    *
    * @param rex - a regular expression
@@ -41,16 +44,15 @@ define([
 
     function wrap(arr, num) {
       var surround
-        , notSurrounded
-        , _num = num;
+        , notSurrounded;
 
-      if (arr.length > _num) {
-        surround = arr.slice(0, _num);
-        notSurrounded = arr.slice(_num, arr.length);
+      if (arr.length > num) {
+        surround      = arr.slice(0, num);
+        notSurrounded = arr.slice(num, arr.length);
         wrappedDom.push(surround);
-        wrap(notSurrounded, _num);
+        wrap(notSurrounded, num);
       } else {
-        var remainder = _num - arr.length;
+        var remainder = num - arr.length;
         surround = arr;
 
         for (var i = 0; i < remainder; i++) {
@@ -98,12 +100,28 @@ define([
       gallery.imgArr = imgArr;
     });
   }
+
+
+
   return ['$scope', 'DataService', '$sanitize', '$window', '$log', function($scope, DataService, $sanitize, $window, $log){
     var gallery = this
       , data = DataService.data(gallery);
     gallery.meta = $scope;
 
     formatPost(data);
+
+
+//    if($window.Tester){
+//      Tester(true).returnUseableString = function(rex, str, arr){
+//        return returnUseableString(rex, str, arr);
+//      }
+//      Tester.wrapIntoRows = function(arr, num){
+//        return wrapIntoRows(arr, num);
+//      }
+//      Tester.formatPost = function(data){
+//        return formatPost(data);
+//      }
+//    }
 
     $scope.GalleryController = this;
     return $scope.CompanyController ;

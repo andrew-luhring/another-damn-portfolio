@@ -19,6 +19,7 @@
   }
 
   var com= 'js/common'
+    , comS = com + '/services'
     , init= 'js/init'
     , testmocks= '../tests/unit/gallery/mocks'
     , gal = 'js/gallery'
@@ -49,6 +50,7 @@
 //    Common
 //    -----------------------
       ,  com : com
+      ,  comS : comS
 //    Gallery
 //    -----------------------
       , gal: gal
@@ -80,7 +82,7 @@
   });
   require([
     'init/jquery_bootstrap'
-    , 'init/apps_bootstrap'
+  , 'init/apps_bootstrap'
   ]);
 
 })();

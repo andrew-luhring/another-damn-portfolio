@@ -2,7 +2,8 @@
 (function(){
   'use strict';
 
-  var com= 'js/common'
+  var com = 'js/common'
+    , comS= com + '/services'
     , init= 'js/init'
     , gal = 'js/gallery'
     , galD = gal + '/directives'
@@ -42,6 +43,7 @@
 //    Common
 //    -----------------------
       ,  com : com
+      ,  comS : comS
 //    Gallery
 //    -----------------------
       , gal: gal

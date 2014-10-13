@@ -10,6 +10,7 @@ define([
   var Gallery = init.gallery;
 
   return Gallery
+    .value('testmode', false)
     .service('AjaxService', require('com/services/ajax.service'))
     .service('DataService', require('galS/data.service'))
     .directive('rooGallery', require('galD/gallery.directive'))

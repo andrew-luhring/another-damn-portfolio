@@ -1,23 +1,24 @@
 /*jshint expr: true*/
-
 define([
     'angular'
   , 'init/apps_init'
   , 'com/matchers'
   , 'mocks'
   , 'lodash'
+  , 'comS/private.tester'
 ], function(
   angular
 , apps_init
 , matchers
 , mocks
 , _
+, Tester
 ){
 "use strict";
 
 
   var inject = mocks.inject;
-
+  var tester = new Tester(true);
 
 
   describe("\n================\n\ngalleryController", function(){
@@ -46,7 +47,12 @@ define([
           , lightBoxTriggered = controller.triggerLightbox(data[0].url);
         expect(lightBoxTriggered).toBe(data[0].url);
       });
+      it("this is testing Tester", function(){
+        console.log (tester);
 
+
+        expect(tester).toBeDefined();
+      });
 
     });
   });
