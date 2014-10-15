@@ -16,7 +16,7 @@
     <article ng-repeat="gal in row"  class="post" ng-class="[[gal.classes]]" >
       <figure class="post-content" >
         <figcaption class="gallery-caption">[[gal.alt]]</figcaption>
-        <a roo-gallery="[[gal.classes]]" href="[[gal.url]]" >
+        <a roo-gallery="[[gal]]" ng-href="[[gal.url]]" >
           <img
             ng-src="[[gal.img]]"
             alt="[[gal.alt]]"

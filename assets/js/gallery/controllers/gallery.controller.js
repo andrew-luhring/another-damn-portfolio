@@ -1,8 +1,9 @@
 define([
     'lodash'
   , 'galS/data.service'
+  , 'galS/lightbox.service'
   , 'comS/private.tester'
-  ]  , function(_, jquery, Tester){
+  ]  , function(_){
   "use strict";
 
 
@@ -78,18 +79,21 @@ define([
       var strArr = []
         , altArr = []
         , imgArr = []
-        , urlArr = [];
+        , urlArr = []
+        , idArr  = []
+        , img    = /'img':'[\/(\w)(\_\-)']*(\.(gif|png))'/ig
+        , alt    = /'alt':'(.)*'/ig
+        , url    = /'url':'(.)*'/ig
+        , id     = /'id':'(\w)+'/;
       _.each(gallery.postsArr, function(post){
         var str = post.markdown.toString()
-          , img = /'img':'[\/(\w)(\_\-)']*(\.(gif|png))'/ig
-          , alt = /'alt':'(.)*'/ig
-          , url = /'url':'(.)*'/ig
           , final = {};
 
 
         final.img = returnUseableString(img, str, strArr);
         final.alt = returnUseableString(alt, str, altArr);
         final.url = returnUseableString(url, str, urlArr);
+        final.id  = returnUseableString(id, str, idArr);
         final.classes = post.tagClasses;
 
         if(final.img && final.alt){
@@ -103,12 +107,42 @@ define([
 
 
 
-  return ['$scope', 'DataService', '$sanitize', '$window', '$log', function($scope, DataService, $sanitize, $window, $log){
+  return [
+      '$scope'
+    , '$window'
+    , '$log'
+    , 'DataService'
+    , 'LightboxService'
+    , function(
+        $scope
+      , $window
+      , $log
+      , DataService
+      , LightboxService
+      ){
     var gallery = this
-      , data = DataService.data(gallery);
+      , data;
     gallery.meta = $scope;
 
-    formatPost(data);
+
+    (function getPostData(){
+      if(DataService.counter < 1){
+        data = DataService.data(gallery);
+        DataService.formatPosts(data, gallery).
+        then(function(data){
+            DataService.route(data);
+        });
+
+
+      }
+    })();
+
+
+    gallery.clicked = function(obj){
+
+      LightboxService.launchLightbox(obj);
+    }
+
 
 
 //    if($window.Tester){

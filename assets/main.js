@@ -33,7 +33,7 @@
       , 'esapi' : 'lib/esapi'
       , 'jquery': 'lib/jquery/dist/jquery'
       , 'mixitup' : 'lib/mixitup/src/jquery.mixitup'
-      , 'ui_router': 'lib/angular-ui-router/release/angular-ui-router'
+      , 'uiRouter': 'lib/angular-ui-router/release/angular-ui-router'
       , 'mocks': 'lib/angular-mocks/angular-mocks'
       , 'transform' : 'lib/xml-to-json/jquery.xml2json'
       , 'traceur' : 'lib/traceur-runtime/traceur-runtime'
@@ -61,7 +61,7 @@
       , 'ngSanitize': {
           'deps': ['angular']
       }
-      , 'ui_router' : ['angular']
+      , 'uiRouter' : ['angular']
     }
     , priority: 'angular'
   });
