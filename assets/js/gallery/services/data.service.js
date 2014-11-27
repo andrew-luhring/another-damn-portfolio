@@ -25,10 +25,6 @@ define([
           var isValidResponse = new AjaxService(response).isValidResponse();
           if(isValidResponse){
             return response;
-          } else {
-            $log.error("invalid response");
-            $log.debug(response);
-            throw new Error();
           }
         }, function(err){
           return new AjaxService(err).isValidResponse();
@@ -41,7 +37,7 @@ define([
         _.each (resp.data.tags, function (tag) {
           tags.push ({
             id: tag.id
-            , name: tag.slug
+          , name: tag.slug
           });
         });
         obj.tags = tags;

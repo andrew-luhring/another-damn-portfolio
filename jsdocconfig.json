@@ -1,0 +1,21 @@
+{
+  "tags": {
+    "allowUnknownTags": "true"
+  }
+  ,"source": {
+    "include": ["./assets/js/*.js", "./assets/js/**/*.js", "./assets/js/**/**/*.js"]
+  , "exclude": ["./app/_res/js/lib/"]
+  }
+  , "plugins": []
+  , "templates": {
+      "cleverLinks": "false"
+    , "monospaceLinks": "false"
+    }
+  , "opts": {
+      "template": "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template"
+    , "encoding": "utf8"
+    , "destination": "./docs/jsdoc/"
+    , "recurse": "true"
+    , "lenient": "true"
+  }
+}

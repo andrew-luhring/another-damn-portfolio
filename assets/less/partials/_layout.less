@@ -30,10 +30,11 @@
 
 .post {
   flex: 1;
-  margin: 4rem auto;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
   position: relative;
   border: 1px solid black;
+  border-image: -webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) .8 100%;
+;
 }
 .post:after {
   bottom: -5px;
@@ -44,6 +45,7 @@
   margin-left: -5px;
   position: absolute;
   width: 7px;
+ 
 }
 
 .post-title {

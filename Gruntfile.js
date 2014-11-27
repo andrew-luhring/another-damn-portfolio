@@ -1,4 +1,5 @@
 /*jshint expr: true, strict: false*/
+var files = require('./config/files.js');
 function lintOptions(isBrowser) {
   "use strict";
   var opts = {
@@ -247,10 +248,10 @@ module.exports = function(grunt) {
         , watch : {
             configFile: './config/protractor.conf.js'
             , options: {
-          keepAlive : true
-//        , debug: true
-        }
-        }
+                keepAlive : true
+    //        , debug: true
+              }
+            }
           , spike : {
           configFile: './config/protractor.conf.js'
             , options: {

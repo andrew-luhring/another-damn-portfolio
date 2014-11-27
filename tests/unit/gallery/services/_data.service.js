@@ -63,7 +63,6 @@ define([
         var obj = {}
           , result = DataService.data(obj);
         result.then(function(data){
-//          console.log (data);
           expect(data).toExist();
         });
         deferred.resolve(postMocks);
@@ -79,7 +78,6 @@ define([
         $httpBackend.
           when('GET', '/nerd/api/public/posts/').
           respond(postMocks);
-
       });
       afterEach(function(){
         $httpBackend.flush();
