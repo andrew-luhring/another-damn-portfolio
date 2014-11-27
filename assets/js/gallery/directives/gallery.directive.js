@@ -7,11 +7,11 @@ define([
     var illustration = _.contains(attr, 'illustration')
     , website = _.contains(attr, 'website');
     if(illustration){
-
+      return 'illustration';
     } else if(website) {
-
+      return 'iframe';
     } else {
-      return;
+      return 'disabled';
     }
   }
 
@@ -22,11 +22,19 @@ define([
         rooGallery : '='
       }
     , link: function($scope, $elem, $attr){
+        var hasLightbox = false;
         $elem.click(function(e){
           e.preventDefault();
-          console.log ($elem);
-          $elem.append('<div lightbox=""></div>')
-          generateOverlay($attr.rooGallery);
+          if(hasLightbox === true){
+            console.log('already has lightbox');
+            return;
+          } else {
+            console.log ('generate lightbox');
+            
+            $elem.append('<div class="lightbox" lightbox="'+ generateOverlay($attr.rooGallery) + '"></div>');
+            hasLightbox = true;
+          }
+
         });
       }
     };
