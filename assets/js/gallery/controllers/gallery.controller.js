@@ -109,10 +109,10 @@ define([
     gallery.meta = $scope;
 
     formatPost(data);
-    
+
     gallery.openLightbox = function(e){
       console.log (e);
-      
+
     };
 
 
@@ -129,7 +129,7 @@ define([
     }
 
     $scope.GalleryController = this;
-    return $scope.CompanyController ;
+    return $scope.GalleryController ;
   }];
 });
 

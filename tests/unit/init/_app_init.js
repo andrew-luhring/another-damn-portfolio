@@ -9,6 +9,7 @@ define([
      angular , mocks, apps_init, matchers){
 "use strict";
 var gallery = apps_init.gallery
+  , play = apps_init.play
   , inject = mocks.inject;
 
   beforeEach(function(){
@@ -18,6 +19,9 @@ var gallery = apps_init.gallery
   describe("\n================\n\napps_init", function(){
     it("exists", function(){
       expect(apps_init).toBeTypeOf('object');
+    });
+    it('has a play module', function(){
+      expect(play).toExist();
     });
   });
 // gallery
@@ -35,4 +39,6 @@ var gallery = apps_init.gallery
         });
       });
     });
+// play
+
 });

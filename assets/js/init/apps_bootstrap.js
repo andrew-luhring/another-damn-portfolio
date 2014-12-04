@@ -3,9 +3,9 @@ define([
      'require'
   ,  'angular'
   ,  'gal/gallery'
-], function(require, angular, gallery) {
+  ,  'js/play/play'
+], function(require, angular, gallery, play) {
   "use strict";
-
   /**
    * The module responsible for bootstrapping angular apps to the page.
    * @exports init/apps_bootstrap
@@ -13,6 +13,7 @@ define([
    */
   angular.bootstrap(document.body, [
     gallery.name
+  , play.name
   ]);
   return angular;
 });

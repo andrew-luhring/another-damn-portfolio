@@ -1,0 +1,113 @@
+
+.playground {
+  .blog-description;
+  text-align:center;
+}
+.playground-label{
+  margin: 4rem auto;
+}
+
+
+
+.bar {
+  background: black;
+  padding: 5px;
+  border: 5px solid white;
+  height: 100px;
+  margin: auto;
+  position: relative;
+  transition: background 0.5s;
+  width: 250px;
+  //
+    &:before
+  , &:after{
+    display: block;
+    position:absolute;
+    top:35%;
+    transition: opacity 0.5s 0.25s;
+  }
+  //
+  &:after{
+    color: white;
+    content:"light";
+    opacity:1;
+    right: 10px;
+  }
+  &:before{
+    content:"dark";
+    color: black;
+    left: 10px;
+    opacity:0
+  }
+  &.active{
+    background: white;
+    border-color:black;
+    &:after{
+      opacity:0;
+    }
+    &:before{
+      opacity:1;
+    }
+  }
+}
+
+.bar, .slider{
+  font-family: "GeoSansLight";
+}
+
+.slider{
+  background: black;
+  border:5px solid white;
+  border-radius: 50%;
+  color: white;
+  display: table;
+  height:90px;
+  left:0;
+  position: absolute;
+  outline:none;
+  top:0;
+  transition: left 1s, transform 1s;
+  transform: rotate(0deg);
+  width: 90px;
+}
+
+.bar.active .slider{
+  background:white;
+  color: black;
+  border-color:black;
+  left:150px;
+  transition: left 1s, background .5s, border-color .5s, transform 1s;
+  transform: rotate(360deg);
+}
+.slider-inner{
+  position: absolute;
+  display:table-cell;
+  vertical-align:middle;
+  line-height: 0;
+  font-size: 1.5rem;
+  text-align:center;
+}
+
+
+body{
+  transition: background 1s;
+}
+.darkmode .post{
+  border-color: #ebf2f6;
+}
+.darkmode .post:after{
+  border: #e7eef2 1px solid;
+  background: #000;
+  box-shadow: #000 0 0 0 5px;
+  transition: border 1s, background 1s, box-shadow 1s;
+}
+
+.darkmode{
+  background: #000 !important;
+  transition: background 1s;
+  .blog-title, .blog-description{
+    color: #e2ecf6;
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.1);
+  }
+
+}

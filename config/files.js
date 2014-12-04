@@ -10,7 +10,7 @@ const ASSETS_DIR =                './assets/'
   , MAIN_F     = ASSETS_DIR     + 'main.js'
   , TEST_F     = TEST_DIR       + 'test-main.js'
   , GLOB = {
-    lib_recursive   : LIB_DIR     + '**/*.js'
+      lib_recursive   : LIB_DIR     + '**/*.js'
     , lib_recursiver  : LIB_DIR     + '**/**/*.js'
     , js              : JS_DIR      + '*.js'
     , js_recursive    : JS_DIR      + '**/*.js'

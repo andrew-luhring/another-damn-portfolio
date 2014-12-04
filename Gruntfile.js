@@ -352,7 +352,26 @@ module.exports = function(grunt) {
     ]);
   grunt.registerTask(                 "_watch",                    "run the actual watch command" , function() {
       config.watch = {
-          backend: {
+         less : {
+      files : [
+        LESS_DIR + "*.less"
+        , LESS_DIR + "**/*.less"
+        , LESS_DIR + "**/**.less"
+        , '!**/existing/**'
+      ]
+        , tasks : ['shell:less']
+        , options: {
+        livereload: false
+          , livereloadOnError: false
+          , spawn: false
+          , atBegin: true
+      }
+    }
+        , livereload : {
+      options: { livereload: true }
+    ,  files : [ cssF, frontendF, 'index.hbs']
+    }
+        , backend: {
           files: backendF
           , tasks: ['jshint:backend']
           , options: {
@@ -368,25 +387,6 @@ module.exports = function(grunt) {
               spawn: true
             , atBegin: true
           }
-        }
-        , less : {
-            files : [
-                LESS_DIR + "*.less"
-              , LESS_DIR + "**/*.less"
-              , LESS_DIR + "**/**.less"
-              , '!**/existing/**'
-            ]
-          , tasks : ['shell:less']
-          , options: {
-              livereload: false
-            , livereloadOnError: false
-            , spawn: false
-            , atBegin: true
-          }
-        }
-        , livereload : {
-             options: { livereload: true }
-          ,  files : [ cssF, frontendF, 'index.hbs']
         }
       };
       grunt.task.run('watch');
