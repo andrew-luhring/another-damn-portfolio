@@ -1,3 +1,6 @@
+/*
+  License @ http://androo.pro/license (MIT license)
+ */
 
 define([
   'lodash'
