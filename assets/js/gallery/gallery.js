@@ -2,8 +2,10 @@ define([
   'init/apps_init'
 , 'galS/data.service'
 , 'galC/gallery.controller'
+, 'galC/lightbox.controller'
 , 'galD/gallery.directive'
-, 'com/a.directive'
+, 'galD/lightbox.directive'
+//, 'com/a.directive'
 , 'com/services/ajax.service'
 ], function(init){
   "use strict";
@@ -14,5 +16,7 @@ define([
     .service('AjaxService', require('com/services/ajax.service'))
     .service('DataService', require('galS/data.service'))
     .directive('rooGallery', require('galD/gallery.directive'))
-    .controller('GalleryController', require('galC/gallery.controller'));
+    .directive('rooLightbox', require('galD/lightbox.directive'))
+    .controller('GalleryController', require('galC/gallery.controller'))
+    .controller('RooLightbox', require('galC/gallery.controller'));
 });

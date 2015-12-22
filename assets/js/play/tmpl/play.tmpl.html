@@ -1,0 +1,12 @@
+
+<label><div class="playground-label">[[play.name]]</div>
+  <div class="bar"
+       ng-class="{active : play.modeVal}"
+    >
+    <button class="slider"
+            ng-model="play.modeVal"
+            ng-click="play.toggleMode()"
+      ><span class="slider-inner">[[play.mode]]</span></button>
+  </div>
+</label>
+

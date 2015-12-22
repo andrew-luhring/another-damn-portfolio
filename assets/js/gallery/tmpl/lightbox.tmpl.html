@@ -1,0 +1,19 @@
+<figure class="lightbox-overlay" >
+  <figcaption class="lightbox-caption">{{lb.caption}}</figcaption>
+
+  <div class="lightbox-item-container" >
+    <img
+      ng-if="lb.type === 'illustration'"
+      src="{{lb.src}}"
+      alt="{{lb.alt}}"
+      class="lightbox-item"
+    />
+    <iframe
+      ng-if="lb.type === 'website'"
+      src="{{lb.src}}"
+      class="lightbox-item"
+      sandbox="allow-same-origin"
+      seamless
+    />
+  </div>
+</figure>

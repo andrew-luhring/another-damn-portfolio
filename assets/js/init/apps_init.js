@@ -2,6 +2,7 @@ define([
   'require'
 , 'angular'
 , 'ngSanitize'
+, 'angular.animate'
 ], function(require, angular){
   "use strict";
   function interpolate($interpolateProvider){
@@ -17,10 +18,19 @@ define([
    * @constructor
    */
   function AngularModule(name, depsArr, configArr ){
-    return angular.module(name, depsArr).config(configArr);
+    if(depsArr && configArr){
+      return angular.module(name, depsArr).config(configArr);
+    }
+    if(depsArr && !configArr){
+      return angular.module(name, depsArr);
+    }
+    if(!depsArr && !configArr){
+      throw new Error('you need at least a dep array.');
+    }
   }
 
   /**
+   *
    *
    * Apps - a container for all the angular apps.
    * @returns {object} - an object that contains all the angular modules as properties.
@@ -42,6 +52,9 @@ define([
         interpolate($interpolateProvider);
       }
     ]);
+  Apps.play = new AngularModule('play', [
+    'ngAnimate'
+  ]);
 
   /**
    * A module which exports all angular modules.

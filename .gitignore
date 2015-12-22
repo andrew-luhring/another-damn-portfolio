@@ -25,6 +25,6 @@ assets/css/
 assets/css/*
 assets/styleguide/
 assets/styleguide/*
-
+tests/coverage/**/*
 assets/jsdoc/
 assets/jsdoc/*

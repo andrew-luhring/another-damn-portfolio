@@ -2,7 +2,7 @@ define([
     'lodash'
   , 'galS/data.service'
   , 'comS/private.tester'
-  ]  , function(_, jquery, Tester){
+  ]  , function(_, jquery, tester){
   "use strict";
 
 
@@ -110,21 +110,26 @@ define([
 
     formatPost(data);
 
+    gallery.openLightbox = function(e){
+      console.log (e);
 
-//    if($window.Tester){
-//      Tester(true).returnUseableString = function(rex, str, arr){
-//        return returnUseableString(rex, str, arr);
-//      }
-//      Tester.wrapIntoRows = function(arr, num){
-//        return wrapIntoRows(arr, num);
-//      }
-//      Tester.formatPost = function(data){
-//        return formatPost(data);
-//      }
-//    }
+    };
+
+
+    if($window.tester){
+      tester(true).returnUseableString = function(rex, str, arr){
+        return returnUseableString(rex, str, arr);
+      };
+      tester.wrapIntoRows = function(arr, num){
+        return wrapIntoRows(arr, num);
+      };
+      tester.formatPost = function(data){
+        return formatPost(data);
+      };
+    }
 
     $scope.GalleryController = this;
-    return $scope.CompanyController ;
+    return $scope.GalleryController ;
   }];
 });
 

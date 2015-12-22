@@ -25,7 +25,11 @@
     , gal = 'js/gallery'
     , galD = gal + '/directives'
     , galC = gal + '/controllers'
-    , galS = gal + '/services';
+    , galS = gal + '/services'
+    , pla = 'js/play'
+    , plaD = pla + '/directives'
+    , plaC = pla + '/controllers'
+    , plaTmpl = pla + '/tmpl';
 
   require.config({
     baseUrl: '/base/assets/'
@@ -57,6 +61,10 @@
       , galC : galC
       , galD : galD
       , galS : galS
+      , pla : pla
+      , plaC : plaC
+      , plaD : plaD
+      , plaTmpl : plaTmpl
       , testmocks: testmocks
 
 //    Mocks

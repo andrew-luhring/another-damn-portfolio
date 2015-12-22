@@ -37,6 +37,7 @@
     "karma-growl-reporter": "^0.1.1",
     "karma-jasmine": "^0.1.5",
     "karma-mocha-reporter": "^0.2.3",
+    "karma-nyan-reporter": "0.0.49",
     "karma-ng-html2js-preprocessor": "^0.1.0",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-requirejs": "^0.2.1",

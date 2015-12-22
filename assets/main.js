@@ -8,7 +8,11 @@
     , gal = 'js/gallery'
     , galD = gal + '/directives'
     , galC = gal + '/controllers'
-    , galS = gal + '/services';
+    , galS = gal + '/services'
+    , pla = 'js/play'
+    , plaD = pla + '/directives'
+    , plaC = pla + '/controllers'
+    , plaTmpl = pla + '/tmpl';
 
 
   requirejs.onError = function (err) {
@@ -50,6 +54,10 @@
       , galC : galC
       , galD : galD
       , galS : galS
+      , pla : pla
+      , plaC : plaC
+      , plaD : plaD
+      , plaTmpl : plaTmpl
     }
     , shim: {
         'angular' : {'exports' : 'angular'}
